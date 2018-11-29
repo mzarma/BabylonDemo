@@ -8,12 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		05B1B82121B048C300D7880D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B82021B048C300D7880D /* AppDelegate.swift */; };
-		05B1B82321B048C300D7880D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B82221B048C300D7880D /* ViewController.swift */; };
-		05B1B82621B048C300D7880D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B1B82421B048C300D7880D /* Main.storyboard */; };
 		05B1B82921B048C300D7880D /* BabylonHealthDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B82721B048C300D7880D /* BabylonHealthDemo.xcdatamodeld */; };
 		05B1B82B21B048C400D7880D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05B1B82A21B048C400D7880D /* Assets.xcassets */; };
 		05B1B82E21B048C400D7880D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B1B82C21B048C400D7880D /* LaunchScreen.storyboard */; };
-		05B1B83921B048C400D7880D /* BabylonHealthDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B83821B048C400D7880D /* BabylonHealthDemoTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,14 +26,11 @@
 /* Begin PBXFileReference section */
 		05B1B81D21B048C300D7880D /* BabylonHealthDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabylonHealthDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05B1B82021B048C300D7880D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		05B1B82221B048C300D7880D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		05B1B82521B048C300D7880D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		05B1B82821B048C300D7880D /* BabylonHealthDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BabylonHealthDemo.xcdatamodel; sourceTree = "<group>"; };
 		05B1B82A21B048C400D7880D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05B1B82D21B048C400D7880D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05B1B82F21B048C400D7880D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05B1B83421B048C400D7880D /* BabylonHealthDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BabylonHealthDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		05B1B83821B048C400D7880D /* BabylonHealthDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabylonHealthDemoTests.swift; sourceTree = "<group>"; };
 		05B1B83A21B048C400D7880D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,8 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				05B1B82021B048C300D7880D /* AppDelegate.swift */,
-				05B1B82221B048C300D7880D /* ViewController.swift */,
-				05B1B82421B048C300D7880D /* Main.storyboard */,
 				05B1B82A21B048C400D7880D /* Assets.xcassets */,
 				05B1B82C21B048C400D7880D /* LaunchScreen.storyboard */,
 				05B1B82F21B048C400D7880D /* Info.plist */,
@@ -93,7 +85,6 @@
 		05B1B83721B048C400D7880D /* BabylonHealthDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				05B1B83821B048C400D7880D /* BabylonHealthDemoTests.swift */,
 				05B1B83A21B048C400D7880D /* Info.plist */,
 			);
 			path = BabylonHealthDemoTests;
@@ -182,7 +173,6 @@
 			files = (
 				05B1B82E21B048C400D7880D /* LaunchScreen.storyboard in Resources */,
 				05B1B82B21B048C400D7880D /* Assets.xcassets in Resources */,
-				05B1B82621B048C300D7880D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +190,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05B1B82321B048C300D7880D /* ViewController.swift in Sources */,
 				05B1B82121B048C300D7880D /* AppDelegate.swift in Sources */,
 				05B1B82921B048C300D7880D /* BabylonHealthDemo.xcdatamodeld in Sources */,
 			);
@@ -210,7 +199,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05B1B83921B048C400D7880D /* BabylonHealthDemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,14 +213,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		05B1B82421B048C300D7880D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				05B1B82521B048C300D7880D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		05B1B82C21B048C400D7880D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

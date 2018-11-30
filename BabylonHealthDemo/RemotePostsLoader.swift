@@ -36,8 +36,7 @@ final class RemotePostsLoader: PostsLoader {
             switch result {
             case .success(let data):
                 guard let remotePosts = RemotePostsLoader.map(postsData: data) else {
-                    group.leave()
-                    return
+                    return group.leave()
                 }
                 posts = remotePosts
                 group.leave()
@@ -51,8 +50,7 @@ final class RemotePostsLoader: PostsLoader {
             switch result {
             case .success(let data):
                 guard let remoteUsers = RemotePostsLoader.map(usersData: data) else {
-                    group.leave()
-                    return
+                    return group.leave()
                 }
                 users = remoteUsers
                 group.leave()
@@ -66,8 +64,7 @@ final class RemotePostsLoader: PostsLoader {
             switch result {
             case .success(let data):
                 guard let remoteComments = RemotePostsLoader.map(commentsData: data) else {
-                    group.leave()
-                    return
+                    return group.leave()
                 }
                 comments = remoteComments
                 group.leave()
@@ -80,8 +77,10 @@ final class RemotePostsLoader: PostsLoader {
         case .success:
             guard let posts = posts,
                   let users = users,
-                let comments = comments else { return completion(.error(.remote)) }
-            return completion(.success(RemotePostsLoader.map(posts: posts, users: users, comments: comments)))
+                  let comments = comments else { return completion(.error(.remote)) }
+            return completion(.success(
+                RemotePostsLoader.map(posts: posts, users: users, comments: comments)
+            ))
         case .timedOut: completion(.error(.remote))
         }
     }
@@ -90,7 +89,22 @@ final class RemotePostsLoader: PostsLoader {
         posts: [RemotePost],
         users: [RemoteUser],
         comments: [RemoteComment]) -> [Post] {
-        return [Post]()
+        
+        let posts: [Post] = posts.map {
+            let id = $0.id
+            return Post(
+                id: id,
+                title: $0.title,
+                body: $0.body,
+                comments: comments
+                    .filter { $0.postId == id }
+                    .map {
+                        return Comment(id: $0.id, name: $0.name, body: $0.name)
+                    }
+            )
+        }
+    
+        return posts
     }
     
     static private func map(postsData: Data) -> [RemotePost]? {

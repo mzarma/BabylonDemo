@@ -19,7 +19,6 @@ struct Post {
     let id: Int
     let title: String
     let body: String
-    let user: User
     let comments: [Comment]
 }
 
@@ -27,5 +26,4 @@ struct Comment {
     let id: Int
     let name: String
     let body: String
-    let post: Post
 }

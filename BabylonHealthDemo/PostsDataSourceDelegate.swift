@@ -8,18 +8,22 @@
 
 import UIKit
 
-struct PostsViewModel {
+struct PostViewModel {
+    let post: Post
     
+    var title: String {
+        return post.title
+    }
 }
 
 final class PostsDataSourceDelegate: NSObject, UITableViewDataSource, UITableViewDelegate {
     
-    var posts = [PostsViewModel]()
+    var posts = [PostViewModel]()
     
     private let noPostsText: String
-    private let postSelection: (PostsViewModel) -> Void
+    private let postSelection: (PostViewModel) -> Void
     
-    init(noPostsText: String, postSelection: @escaping (PostsViewModel) -> Void) {
+    init(noPostsText: String, postSelection: @escaping (PostViewModel) -> Void) {
         self.noPostsText = noPostsText
         self.postSelection = postSelection
     }
@@ -31,6 +35,18 @@ final class PostsDataSourceDelegate: NSObject, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        return posts.count > 0 ? configuredPostsCell(at: indexPath) : configuredNoPostsCell()
+    }
+    
+    private func configuredNoPostsCell() -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = noPostsText
+        return cell
+    }
+    
+    private func configuredPostsCell(at indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = posts[indexPath.row].title
+        return cell
     }
 }

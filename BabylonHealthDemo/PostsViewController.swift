@@ -9,7 +9,7 @@
 import UIKit
 
 final class PostsViewController: UIViewController {
-    private let tableView = UITableView(frame: .zero)
+    let tableView = UITableView(frame: .zero)
     
     private var dataSource: UITableViewDataSource!
     private var delegate: UITableViewDelegate!

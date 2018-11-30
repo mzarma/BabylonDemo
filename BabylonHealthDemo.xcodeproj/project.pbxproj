@@ -14,6 +14,7 @@
 		05B1B84621B04D0D00D7880D /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B84521B04D0D00D7880D /* PostsViewController.swift */; };
 		05B1B84821B0607200D7880D /* PostsDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B84721B0607200D7880D /* PostsDataSourceDelegate.swift */; };
 		05B1B84A21B07E4100D7880D /* RemotePostsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B84921B07E4100D7880D /* RemotePostsLoader.swift */; };
+		05B1B84C21B12FA200D7880D /* PhonePostsViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B84B21B12FA200D7880D /* PhonePostsViewFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		05B1B84521B04D0D00D7880D /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		05B1B84721B0607200D7880D /* PostsDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDataSourceDelegate.swift; sourceTree = "<group>"; };
 		05B1B84921B07E4100D7880D /* RemotePostsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePostsLoader.swift; sourceTree = "<group>"; };
+		05B1B84B21B12FA200D7880D /* PhonePostsViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhonePostsViewFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				05B1B82021B048C300D7880D /* AppDelegate.swift */,
 				05B1B84321B04B5400D7880D /* APIClient.swift */,
+				05B1B84B21B12FA200D7880D /* PhonePostsViewFactory.swift */,
 				05B1B84521B04D0D00D7880D /* PostsViewController.swift */,
 				05B1B84721B0607200D7880D /* PostsDataSourceDelegate.swift */,
 				05B1B84921B07E4100D7880D /* RemotePostsLoader.swift */,
@@ -200,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05B1B84A21B07E4100D7880D /* RemotePostsLoader.swift in Sources */,
+				05B1B84C21B12FA200D7880D /* PhonePostsViewFactory.swift in Sources */,
 				05B1B84621B04D0D00D7880D /* PostsViewController.swift in Sources */,
 				05B1B82121B048C300D7880D /* AppDelegate.swift in Sources */,
 				05B1B84421B04B5400D7880D /* APIClient.swift in Sources */,

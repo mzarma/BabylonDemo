@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		05B1B82121B048C300D7880D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B82021B048C300D7880D /* AppDelegate.swift */; };
-		05B1B82921B048C300D7880D /* BabylonHealthDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B82721B048C300D7880D /* BabylonHealthDemo.xcdatamodeld */; };
 		05B1B82B21B048C400D7880D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05B1B82A21B048C400D7880D /* Assets.xcassets */; };
 		05B1B82E21B048C400D7880D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B1B82C21B048C400D7880D /* LaunchScreen.storyboard */; };
 		05B1B84421B04B5400D7880D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B84321B04B5400D7880D /* APIClient.swift */; };
 		05B1B84621B04D0D00D7880D /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B84521B04D0D00D7880D /* PostsViewController.swift */; };
 		05B1B84821B0607200D7880D /* PostsDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B84721B0607200D7880D /* PostsDataSourceDelegate.swift */; };
+		05B1B84A21B07E4100D7880D /* RemotePostsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B84921B07E4100D7880D /* RemotePostsLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +29,6 @@
 /* Begin PBXFileReference section */
 		05B1B81D21B048C300D7880D /* BabylonHealthDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabylonHealthDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05B1B82021B048C300D7880D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		05B1B82821B048C300D7880D /* BabylonHealthDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BabylonHealthDemo.xcdatamodel; sourceTree = "<group>"; };
 		05B1B82A21B048C400D7880D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05B1B82D21B048C400D7880D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05B1B82F21B048C400D7880D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -38,6 +37,7 @@
 		05B1B84321B04B5400D7880D /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		05B1B84521B04D0D00D7880D /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		05B1B84721B0607200D7880D /* PostsDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDataSourceDelegate.swift; sourceTree = "<group>"; };
+		05B1B84921B07E4100D7880D /* RemotePostsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePostsLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +83,10 @@
 				05B1B84321B04B5400D7880D /* APIClient.swift */,
 				05B1B84521B04D0D00D7880D /* PostsViewController.swift */,
 				05B1B84721B0607200D7880D /* PostsDataSourceDelegate.swift */,
+				05B1B84921B07E4100D7880D /* RemotePostsLoader.swift */,
 				05B1B82A21B048C400D7880D /* Assets.xcassets */,
 				05B1B82C21B048C400D7880D /* LaunchScreen.storyboard */,
 				05B1B82F21B048C400D7880D /* Info.plist */,
-				05B1B82721B048C300D7880D /* BabylonHealthDemo.xcdatamodeld */,
 			);
 			path = BabylonHealthDemo;
 			sourceTree = "<group>";
@@ -199,9 +199,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05B1B84A21B07E4100D7880D /* RemotePostsLoader.swift in Sources */,
 				05B1B84621B04D0D00D7880D /* PostsViewController.swift in Sources */,
 				05B1B82121B048C300D7880D /* AppDelegate.swift in Sources */,
-				05B1B82921B048C300D7880D /* BabylonHealthDemo.xcdatamodeld in Sources */,
 				05B1B84421B04B5400D7880D /* APIClient.swift in Sources */,
 				05B1B84821B0607200D7880D /* PostsDataSourceDelegate.swift in Sources */,
 			);
@@ -461,19 +461,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		05B1B82721B048C300D7880D /* BabylonHealthDemo.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				05B1B82821B048C300D7880D /* BabylonHealthDemo.xcdatamodel */,
-			);
-			currentVersion = 05B1B82821B048C300D7880D /* BabylonHealthDemo.xcdatamodel */;
-			path = BabylonHealthDemo.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 05B1B81521B048C300D7880D /* Project object */;
 }

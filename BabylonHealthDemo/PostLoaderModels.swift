@@ -9,8 +9,7 @@
 import Foundation
 
 enum PostsLoaderError {
-    case APIError
-    case remoteMappingError
+    case remote
 }
 
 enum PostsLoaderResult {

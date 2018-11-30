@@ -12,7 +12,7 @@ final class URLRequestFactory {
     private static let baseURLString = "http://jsonplaceholder.typicode.com"
     private static let postsPath = "/posts"
     
-    static func postsRequest() -> URLRequest {
+    static func getPosts() -> URLRequest {
         var components = URLComponents(string: baseURLString)!
         components.path = postsPath
         return URLRequest(url: components.url!)

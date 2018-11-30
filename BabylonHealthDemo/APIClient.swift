@@ -42,7 +42,7 @@ final class APIClient {
             } else {
                 completion(.error(.unknown))
             }
-            }
-            .resume()
+        }
+        .resume()
     }
 }

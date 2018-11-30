@@ -24,6 +24,7 @@
 		05B1B85C21B147F800D7880D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B85B21B147F800D7880D /* Models.swift */; };
 		05B1B85E21B1481F00D7880D /* PostLoaderModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B85D21B1481F00D7880D /* PostLoaderModels.swift */; };
 		05B1B86021B1761400D7880D /* RemoteModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B85F21B1761400D7880D /* RemoteModels.swift */; };
+		05B1B86221B1C5BF00D7880D /* PhonePostDetailViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86121B1C5BF00D7880D /* PhonePostDetailViewFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		05B1B85B21B147F800D7880D /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		05B1B85D21B1481F00D7880D /* PostLoaderModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLoaderModels.swift; sourceTree = "<group>"; };
 		05B1B85F21B1761400D7880D /* RemoteModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteModels.swift; sourceTree = "<group>"; };
+		05B1B86121B1C5BF00D7880D /* PhonePostDetailViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhonePostDetailViewFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				05B1B84321B04B5400D7880D /* APIClient.swift */,
 				05B1B85521B1470E00D7880D /* APIClientModels.swift */,
 				05B1B84B21B12FA200D7880D /* PhonePostsViewFactory.swift */,
+				05B1B86121B1C5BF00D7880D /* PhonePostDetailViewFactory.swift */,
 				05B1B84D21B135D800D7880D /* Flow.swift */,
 				05B1B84521B04D0D00D7880D /* CustomTableViewController.swift */,
 				05B1B84721B0607200D7880D /* PostsDataSourceDelegate.swift */,
@@ -231,6 +234,7 @@
 			files = (
 				05B1B84E21B135D800D7880D /* Flow.swift in Sources */,
 				05B1B86021B1761400D7880D /* RemoteModels.swift in Sources */,
+				05B1B86221B1C5BF00D7880D /* PhonePostDetailViewFactory.swift in Sources */,
 				05B1B85C21B147F800D7880D /* Models.swift in Sources */,
 				05B1B84A21B07E4100D7880D /* RemotePostsLoader.swift in Sources */,
 				05B1B84C21B12FA200D7880D /* PhonePostsViewFactory.swift in Sources */,

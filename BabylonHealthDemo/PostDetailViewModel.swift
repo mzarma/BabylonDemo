@@ -11,7 +11,6 @@ import Foundation
 struct PostDetailViewModel {
     let post: Post
     let user: User
-    let comments: [Comment]
     
     var author: String {
         return user.username
@@ -22,7 +21,7 @@ struct PostDetailViewModel {
     }
     
     var numberOfComments: String {
-        return String(comments.count)
+        return String(post.comments.count)
     }
     
     static let authorTitle = "Author"

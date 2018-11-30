@@ -12,6 +12,10 @@ protocol PostsViewFactory {
     func makePostsView(_ selected: @escaping (Post) -> Void) -> UIViewController
 }
 
+protocol PostDetailViewFactory {
+    func makePostDetailView(post: Post, user: User) -> UIViewController
+}
+
 final class Flow {
     private let navigation: UINavigationController
     private let postsViewFactory: PostsViewFactory

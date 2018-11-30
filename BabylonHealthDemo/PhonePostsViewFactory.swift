@@ -24,19 +24,19 @@ final class PhonePostsViewFactory: PostsViewFactory {
             selected(postViewModel.post)
         }
         
-        let postsViewController = CustomTableViewController(dataSource: dataSourceDelegate, delegate: dataSourceDelegate)
+        let viewController = CustomTableViewController(dataSource: dataSourceDelegate, delegate: dataSourceDelegate)
         
         loader.loadPosts { result in
             switch result {
             case .success(let posts):
                 dataSourceDelegate.posts = posts.compactMap { PostViewModel(post: $0) }
                 DispatchQueue.main.async {
-                    postsViewController.tableView.reloadData()
+                    viewController.tableView.reloadData()
                 }
             case .error(_): break
             }
         }
         
-        return postsViewController
+        return viewController
     }
 }

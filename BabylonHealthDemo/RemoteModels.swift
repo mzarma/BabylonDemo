@@ -8,20 +8,20 @@
 
 import Foundation
 
-struct RemoteUser {
+struct RemoteUser: Codable {
     let id: Int
     let name: String
     let username: String
 }
 
-struct RemotePost {
+struct RemotePost: Codable {
     let userId: Int
     let id: Int
     let title: String
     let body: String
 }
 
-struct RemoteComment {
+struct RemoteComment: Codable {
     let postId: Int
     let id: Int
     let name: String

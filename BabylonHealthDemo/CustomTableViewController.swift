@@ -1,5 +1,5 @@
 //
-//  PostsViewController.swift
+//  CustomTableViewController.swift
 //  BabylonHealthDemo
 //
 //  Created by Michail Zarmakoupis on 29/11/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class PostsViewController: UIViewController {
+final class CustomTableViewController: UIViewController {
     let tableView = UITableView(frame: .zero)
     
     private var dataSource: UITableViewDataSource!

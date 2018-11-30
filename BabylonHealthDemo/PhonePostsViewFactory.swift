@@ -24,7 +24,7 @@ final class PhonePostsViewFactory: PostsViewFactory {
             selected(postViewModel.post)
         }
         
-        let postsViewController = PostsViewController(dataSource: dataSourceDelegate, delegate: dataSourceDelegate)
+        let postsViewController = CustomTableViewController(dataSource: dataSourceDelegate, delegate: dataSourceDelegate)
         
         loader.loadPosts { result in
             switch result {

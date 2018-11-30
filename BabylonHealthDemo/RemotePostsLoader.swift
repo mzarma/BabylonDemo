@@ -10,18 +10,9 @@ import Foundation
 
 final class RemotePostsLoader: PostsLoader {
     private let client: APIClient
-    private let getPostsRequest: URLRequest
-    private let getUsersRequest: URLRequest
-    private let getCommentsRequest: URLRequest
     
-    init(client: APIClient,
-         getPostsRequest: URLRequest,
-         getUsersRequest: URLRequest,
-         getCommentsRequest: URLRequest) {
+    init(client: APIClient) {
         self.client = client
-        self.getPostsRequest = getPostsRequest
-        self.getUsersRequest = getUsersRequest
-        self.getCommentsRequest = getCommentsRequest
     }
     
     func loadPosts(completion: @escaping (PostsLoaderResult) -> Void) {
@@ -31,46 +22,16 @@ final class RemotePostsLoader: PostsLoader {
         
         let group = DispatchGroup()
         
-        group.enter()
-        client.execute(request: getPostsRequest) { result in
-            switch result {
-            case .success(let data):
-                guard let remotePosts = RemotePostsLoader.map(postsData: data) else {
-                    return group.leave()
-                }
-                posts = remotePosts
-                group.leave()
-            case .error(_):
-                group.leave()
-            }
+        load(URLRequestFactory.getPosts(), group, RemotePostsLoader.mapPosts) { mappedPosts in
+            posts = mappedPosts as? [RemotePost]
         }
         
-        group.enter()
-        client.execute(request: getUsersRequest) { result in
-            switch result {
-            case .success(let data):
-                guard let remoteUsers = RemotePostsLoader.map(usersData: data) else {
-                    return group.leave()
-                }
-                users = remoteUsers
-                group.leave()
-            case .error(_):
-                group.leave()
-            }
+        load(URLRequestFactory.getUsers(), group, RemotePostsLoader.mapUsers) { mappedUsers in
+            users = mappedUsers as? [RemoteUser]
         }
-            
-        group.enter()
-        client.execute(request: getCommentsRequest) { result in
-            switch result {
-            case .success(let data):
-                guard let remoteComments = RemotePostsLoader.map(commentsData: data) else {
-                    return group.leave()
-                }
-                comments = remoteComments
-                group.leave()
-            case .error(_):
-                group.leave()
-            }
+
+        load(URLRequestFactory.getComments(), group, RemotePostsLoader.mapComments) { mappedComments in
+            comments = mappedComments as? [RemoteComment]
         }
         
         switch group.wait(timeout: .now() + 10) {
@@ -85,7 +46,51 @@ final class RemotePostsLoader: PostsLoader {
         }
     }
     
-    static private func map(
+    private func load(_ request: URLRequest, _ group: DispatchGroup, _ mapping: @escaping (Data) -> Any?, completion: @escaping (Any) -> Void) {
+        group.enter()
+        client.execute(request: request) { result in
+            switch result {
+            case .success(let data):
+                guard let remoteDataMapped = mapping(data) else {
+                    return group.leave()
+                }
+                completion(remoteDataMapped)
+                group.leave()
+            case .error(_):
+                group.leave()
+            }
+        }
+    }
+}
+
+private extension RemotePostsLoader {
+    static func mapPosts(postsData: Data) -> [RemotePost]? {
+        guard let posts = try? JSONDecoder().decode([RemotePost].self, from: postsData) else {
+            return nil
+        }
+        
+        return posts
+    }
+    
+    static func mapUsers(usersData: Data) -> [RemoteUser]? {
+        guard let posts = try? JSONDecoder().decode([RemoteUser].self, from: usersData) else {
+            return nil
+        }
+        
+        return posts
+    }
+    
+    static private func mapComments(commentsData: Data) -> [RemoteComment]? {
+        guard let posts = try? JSONDecoder().decode([RemoteComment].self, from: commentsData) else {
+            return nil
+        }
+        
+        return posts
+    }
+}
+
+private extension RemotePostsLoader {
+    static func map(
         posts: [RemotePost],
         users: [RemoteUser],
         comments: [RemoteComment]) -> [Post] {
@@ -100,35 +105,8 @@ final class RemotePostsLoader: PostsLoader {
                     .filter { $0.postId == id }
                     .map {
                         return Comment(id: $0.id, name: $0.name, body: $0.name)
-                    }
+                }
             )
-        }
-    
-        return posts
-    }
-    
-    static private func map(postsData: Data) -> [RemotePost]? {
-        let decoder = JSONDecoder()
-        guard let posts = try? decoder.decode([RemotePost].self, from: postsData) else {
-            return nil
-        }
-
-        return posts
-    }
-    
-    static private func map(usersData: Data) -> [RemoteUser]? {
-        let decoder = JSONDecoder()
-        guard let posts = try? decoder.decode([RemoteUser].self, from: usersData) else {
-            return nil
-        }
-        
-        return posts
-    }
-
-    static private func map(commentsData: Data) -> [RemoteComment]? {
-        let decoder = JSONDecoder()
-        guard let posts = try? decoder.decode([RemoteComment].self, from: commentsData) else {
-            return nil
         }
         
         return posts

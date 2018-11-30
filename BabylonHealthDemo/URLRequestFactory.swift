@@ -14,7 +14,7 @@ final class URLRequestFactory {
     private static let usersPath = "/users"
     private static let commentsPath = "/comments"
     
-    static func getRequest(path: String) -> URLRequest {
+    private static func getRequest(path: String) -> URLRequest {
         var components = URLComponents(string: baseURLString)!
         components.path = path
         return URLRequest(url: components.url!)

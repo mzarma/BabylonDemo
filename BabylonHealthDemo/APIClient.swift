@@ -8,17 +8,6 @@
 
 import Foundation
 
-enum APIClientResult {
-    case success(Data)
-    case error(APIClientError)
-}
-
-enum APIClientError {
-    case badRequest
-    case server
-    case unknown
-}
-
 final class APIClient {
     
     private let session: URLSession

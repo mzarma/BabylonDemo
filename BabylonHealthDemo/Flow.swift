@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol PostsViewFactory {
+    func makePostsView(_ selected: @escaping (Post) -> Void) -> UIViewController
+}
+
 final class Flow {
     private let navigation: UINavigationController
     private let postsViewFactory: PostsViewFactory

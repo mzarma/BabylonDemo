@@ -8,27 +8,6 @@
 
 import Foundation
 
-struct Post: Codable {
-    let userId: Int
-    let id: Int
-    let title: String
-    let body: String
-}
-
-enum PostsLoaderError {
-    case APIError
-    case remoteMappingError
-}
-
-enum PostsLoaderResult {
-    case success([Post])
-    case error(PostsLoaderError)
-}
-
-protocol PostsLoader {
-    func loadPosts(completion: @escaping (PostsLoaderResult) -> Void)
-}
-
 final class RemotePostsLoader: PostsLoader {
     private let client: APIClient
     private let request: URLRequest

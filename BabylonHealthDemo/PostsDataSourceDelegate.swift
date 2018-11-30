@@ -8,14 +8,6 @@
 
 import UIKit
 
-struct PostViewModel {
-    let post: Post
-    
-    var title: String {
-        return post.title
-    }
-}
-
 final class PostsDataSourceDelegate: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     var posts = [PostViewModel]()

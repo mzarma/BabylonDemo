@@ -8,40 +8,6 @@
 
 import UIKit
 
-struct User {
-    
-}
-
-struct Comment {
-    
-}
-
-struct PostDetail {
-    let author: String
-    let description: String
-    let numberOfComments: Int
-}
-
-struct PostDetailViewModel {
-    let postDetail: PostDetail
-    
-    var author: String {
-        return postDetail.author
-    }
-    
-    var description: String {
-        return postDetail.description
-    }
-    
-    var numberOfComments: String {
-        return String(postDetail.numberOfComments)
-    }
-    
-    static let authorTitle = "Author"
-    static let descriptionTitle = "Description"
-    static let numberOfCommentsTitle = "Comments"
-}
-
 final class PostDetailDataSourceDelegate: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     private let postDetail: PostDetailViewModel

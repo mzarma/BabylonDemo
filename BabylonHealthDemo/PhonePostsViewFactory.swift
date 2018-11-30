@@ -8,8 +8,8 @@
 
 import UIKit
 
-protocol PostsViewFactory {
-    func makePostsView(_ selected: @escaping (Post) -> Void) -> UIViewController
+protocol PostsLoader {
+    func loadPosts(completion: @escaping (PostsLoaderResult) -> Void)
 }
 
 final class PhonePostsViewFactory: PostsViewFactory {

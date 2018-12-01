@@ -1,5 +1,5 @@
 //
-//  RemotePostsLoader.swift
+//  RemoteDataLoader.swift
 //  BabylonHealthDemo
 //
 //  Created by Michail Zarmakoupis on 29/11/2018.
@@ -8,29 +8,29 @@
 
 import Foundation
 
-final class RemotePostsLoader: PostsLoader {
+final class RemoteDataLoader: DataLoader {
     private let client: APIClient
     
     init(client: APIClient) {
         self.client = client
     }
     
-    func loadPosts(completion: @escaping (PostsLoaderResult) -> Void) {
+    func loadData(completion: @escaping (DataLoaderResult) -> Void) {
         var posts: [RemotePost]?
         var users: [RemoteUser]?
         var comments: [RemoteComment]?
         
         let group = DispatchGroup()
         
-        load(URLRequestFactory.getPosts(), group, RemotePostsLoader.mapPosts) { mappedPosts in
+        load(URLRequestFactory.getPosts(), group, RemoteDataLoader.mapPosts) { mappedPosts in
             posts = mappedPosts as? [RemotePost]
         }
         
-        load(URLRequestFactory.getUsers(), group, RemotePostsLoader.mapUsers) { mappedUsers in
+        load(URLRequestFactory.getUsers(), group, RemoteDataLoader.mapUsers) { mappedUsers in
             users = mappedUsers as? [RemoteUser]
         }
 
-        load(URLRequestFactory.getComments(), group, RemotePostsLoader.mapComments) { mappedComments in
+        load(URLRequestFactory.getComments(), group, RemoteDataLoader.mapComments) { mappedComments in
             comments = mappedComments as? [RemoteComment]
         }
         
@@ -40,7 +40,7 @@ final class RemotePostsLoader: PostsLoader {
                   let users = users,
                   let comments = comments else { return completion(.error(.remote)) }
             return completion(.success(
-                RemotePostsLoader.map(posts: posts, users: users, comments: comments)
+                RemoteDataLoader.map(remotePosts: posts, remoteUsers: users, remoteComments: comments)
             ))
         case .timedOut: completion(.error(.remote))
         }
@@ -63,7 +63,7 @@ final class RemotePostsLoader: PostsLoader {
     }
 }
 
-private extension RemotePostsLoader {
+private extension RemoteDataLoader {
     static func mapPosts(data: Data) -> [RemotePost]? {
         guard let posts = try? JSONDecoder().decode([RemotePost].self, from: data) else {
             return nil
@@ -89,26 +89,35 @@ private extension RemotePostsLoader {
     }
 }
 
-private extension RemotePostsLoader {
+private extension RemoteDataLoader {
     static func map(
-        posts: [RemotePost],
-        users: [RemoteUser],
-        comments: [RemoteComment]) -> [Post] {
+        remotePosts: [RemotePost],
+        remoteUsers: [RemoteUser],
+        remoteComments: [RemoteComment]) -> [User] {
         
-        let posts: [Post] = posts.map {
-            let id = $0.id
-            return Post(
-                id: id,
-                title: $0.title,
-                body: $0.body,
-                comments: comments
-                    .filter { $0.postId == id }
+        let users: [User] = remoteUsers.map {
+            let userId = $0.id
+            return User(
+                id: userId,
+                name: $0.name,
+                username: $0.username,
+                posts: remotePosts
+                    .filter { $0.userId == userId }
                     .map {
-                        return Comment(id: $0.id, name: $0.name, body: $0.name)
-                }
+                        let postId = $0.id
+                        return Post(id: $0.id,
+                                    title: $0.title,
+                                    body: $0.body,
+                                    comments: remoteComments
+                                        .filter { $0.postId == postId }
+                                        .map {
+                                            return Comment(id: $0.id, name: $0.name, body: $0.name)
+                                        }
+                                    )
+                    }
             )
         }
-        
-        return posts
+
+        return users
     }
 }

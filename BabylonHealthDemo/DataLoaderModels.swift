@@ -1,5 +1,5 @@
 //
-//  PostLoaderModels.swift
+//  DataLoaderModels.swift
 //  BabylonHealthDemo
 //
 //  Created by Michail Zarmakoupis on 30/11/2018.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-enum PostsLoaderError {
+enum DataLoaderError {
     case remote
 }
 
-enum PostsLoaderResult {
-    case success([Post])
-    case error(PostsLoaderError)
+enum DataLoaderResult {
+    case success([User])
+    case error(DataLoaderError)
 }

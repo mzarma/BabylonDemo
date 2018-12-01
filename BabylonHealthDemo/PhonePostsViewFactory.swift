@@ -8,14 +8,16 @@
 
 import UIKit
 
-protocol PostsLoader {
-    func loadPosts(completion: @escaping (PostsLoaderResult) -> Void)
+protocol DataLoader {
+    func loadData(completion: @escaping (DataLoaderResult) -> Void)
 }
 
 final class PhonePostsViewFactory: PostsViewFactory, PostDetailViewFactory {
-    private let loader: PostsLoader
+    private var users = [User]()
     
-    init(loader: PostsLoader) {
+    private let loader: DataLoader
+    
+    init(loader: DataLoader) {
         self.loader = loader
     }
     
@@ -26,10 +28,14 @@ final class PhonePostsViewFactory: PostsViewFactory, PostDetailViewFactory {
         
         let viewController = CustomTableViewController(dataSource: dataSourceDelegate, delegate: dataSourceDelegate)
         
-        loader.loadPosts { result in
+        loader.loadData { [weak self] result in
             switch result {
-            case .success(let posts):
-                dataSourceDelegate.posts = posts.compactMap { PostViewModel(post: $0) }
+            case .success(let users):
+                self?.users = users
+                let allPosts = users.reduce([Post](), { result, user in
+                    result + user.posts
+                })
+                dataSourceDelegate.posts = allPosts.compactMap { PostViewModel(post: $0) }
                 DispatchQueue.main.async {
                     viewController.tableView.reloadData()
                 }
@@ -45,5 +51,4 @@ final class PhonePostsViewFactory: PostsViewFactory, PostDetailViewFactory {
         let dataSourceDelegate = PostDetailDataSourceDelegate(postDetail: postDetail)
         return CustomTableViewController(dataSource: dataSourceDelegate, delegate: dataSourceDelegate)
     }
-
 }

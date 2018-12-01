@@ -27,7 +27,7 @@ final class PostDetailDataSourceDelegate: NSObject, UITableViewDataSource, UITab
         case TableStructure.authorTitle.rawValue: return defaultCell(text: PostDetailViewModel.authorTitle)
         case TableStructure.author.rawValue: return defaultCell(text: postDetail.author)
         case TableStructure.descriptionTitle.rawValue: return defaultCell(text: PostDetailViewModel.descriptionTitle)
-        case TableStructure.author.rawValue: return defaultCell(text: postDetail.description)
+        case TableStructure.description.rawValue: return defaultCell(text: postDetail.description)
         case TableStructure.numberOfCommentsTitle.rawValue: return defaultCell(text: PostDetailViewModel.numberOfCommentsTitle)
         case TableStructure.numberOfComments.rawValue: return defaultCell(text: postDetail.numberOfComments)
         default: return UITableViewCell()
@@ -38,7 +38,7 @@ final class PostDetailDataSourceDelegate: NSObject, UITableViewDataSource, UITab
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
-        case TableStructure.description.rawValue: return 120
+        case TableStructure.description.rawValue: return 44
         default: return 44
         }
     }

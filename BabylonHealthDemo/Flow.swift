@@ -13,21 +13,27 @@ protocol PostsViewFactory {
 }
 
 protocol PostDetailViewFactory {
-    func makePostDetailView(post: Post, user: User) -> UIViewController
+    func makePostDetailView(post: Post, author: String) -> UIViewController
 }
 
 final class Flow {
     private let navigation: UINavigationController
     private let postsViewFactory: PostsViewFactory
+    private let postDetailViewFactory: PostDetailViewFactory
     
-    init(navigation: UINavigationController, postsViewFactory: PostsViewFactory) {
+    init(navigation: UINavigationController,
+         postsViewFactory: PostsViewFactory,
+         postDetailViewFactory: PostDetailViewFactory) {
         self.navigation = navigation
         self.postsViewFactory = postsViewFactory
+        self.postDetailViewFactory = postDetailViewFactory
     }
     
     func start() {
-        let postsView = postsViewFactory.makePostsView { _ in
-            
+        let postsView = postsViewFactory.makePostsView { [weak self] post in
+            guard let self = self else { return }
+            let postDetailView = self.postDetailViewFactory.makePostDetailView(post: post, author: "")
+            self.navigation.pushViewController(postDetailView, animated: true)
         }
         
         navigation.setViewControllers([postsView], animated: false)

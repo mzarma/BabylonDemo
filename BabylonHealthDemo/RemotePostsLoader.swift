@@ -64,28 +64,28 @@ final class RemotePostsLoader: PostsLoader {
 }
 
 private extension RemotePostsLoader {
-    static func mapPosts(postsData: Data) -> [RemotePost]? {
-        guard let posts = try? JSONDecoder().decode([RemotePost].self, from: postsData) else {
+    static func mapPosts(data: Data) -> [RemotePost]? {
+        guard let posts = try? JSONDecoder().decode([RemotePost].self, from: data) else {
             return nil
         }
         
         return posts
     }
     
-    static func mapUsers(usersData: Data) -> [RemoteUser]? {
-        guard let posts = try? JSONDecoder().decode([RemoteUser].self, from: usersData) else {
+    static func mapUsers(data: Data) -> [RemoteUser]? {
+        guard let users = try? JSONDecoder().decode([RemoteUser].self, from: data) else {
             return nil
         }
         
-        return posts
+        return users
     }
     
-    static private func mapComments(commentsData: Data) -> [RemoteComment]? {
-        guard let posts = try? JSONDecoder().decode([RemoteComment].self, from: commentsData) else {
+    static private func mapComments(data: Data) -> [RemoteComment]? {
+        guard let comments = try? JSONDecoder().decode([RemoteComment].self, from: data) else {
             return nil
         }
         
-        return posts
+        return comments
     }
 }
 

@@ -12,7 +12,7 @@ protocol PostsLoader {
     func loadPosts(completion: @escaping (PostsLoaderResult) -> Void)
 }
 
-final class PhonePostsViewFactory: PostsViewFactory {
+final class PhonePostsViewFactory: PostsViewFactory, PostDetailViewFactory {
     private let loader: PostsLoader
     
     init(loader: PostsLoader) {
@@ -39,4 +39,11 @@ final class PhonePostsViewFactory: PostsViewFactory {
         
         return viewController
     }
+    
+    func makePostDetailView(post: Post) -> UIViewController {
+        let postDetail = PostDetailViewModel(post: post, users: users)
+        let dataSourceDelegate = PostDetailDataSourceDelegate(postDetail: postDetail)
+        return CustomTableViewController(dataSource: dataSourceDelegate, delegate: dataSourceDelegate)
+    }
+
 }

@@ -30,6 +30,14 @@ final class PostsDataSourceDelegate: NSObject, UITableViewDataSource, UITableVie
         return posts.count > 0 ? configuredPostsCell(at: indexPath) : configuredNoPostsCell()
     }
     
+    // MARK: - UITableViewDataSource
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if posts.count > 0 {
+            postSelection(posts[indexPath.row])
+        }
+    }
+    
     private func configuredNoPostsCell() -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.text = noPostsText

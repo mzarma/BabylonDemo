@@ -10,12 +10,16 @@ import Foundation
 
 struct PostDetailViewModel {
     let post: Post
-    let user: User
+    let users: [User]
     
     var author: String {
-        return user.username
+        return users.filter({ user in
+            return !user.posts.filter({ post in
+                return post.id == self.post.id
+            }).isEmpty
+        }).first?.name ?? ""
     }
-    
+        
     var description: String {
         return post.body
     }

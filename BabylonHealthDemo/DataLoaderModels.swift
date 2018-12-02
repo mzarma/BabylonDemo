@@ -10,6 +10,7 @@ import Foundation
 
 enum DataLoaderError {
     case remote
+    case local
 }
 
 enum DataLoaderResult {

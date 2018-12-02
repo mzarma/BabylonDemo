@@ -24,6 +24,8 @@
 		05B1B85E21B1481F00D7880D /* DataLoaderModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B85D21B1481F00D7880D /* DataLoaderModels.swift */; };
 		05B1B86021B1761400D7880D /* RemoteModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B85F21B1761400D7880D /* RemoteModels.swift */; };
 		05B1B86421B2EBBD00D7880D /* RemoteDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86321B2EBBC00D7880D /* RemoteDataLoader.swift */; };
+		05B1B86621B3F21300D7880D /* LocalDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86521B3F21300D7880D /* LocalDataLoader.swift */; };
+		05B1B86821B3F99500D7880D /* LocalModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86721B3F99500D7880D /* LocalModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		05B1B85D21B1481F00D7880D /* DataLoaderModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoaderModels.swift; sourceTree = "<group>"; };
 		05B1B85F21B1761400D7880D /* RemoteModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteModels.swift; sourceTree = "<group>"; };
 		05B1B86321B2EBBC00D7880D /* RemoteDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDataLoader.swift; sourceTree = "<group>"; };
+		05B1B86521B3F21300D7880D /* LocalDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataLoader.swift; sourceTree = "<group>"; };
+		05B1B86721B3F99500D7880D /* LocalModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +117,9 @@
 				05B1B85921B147C500D7880D /* PostDetailViewModel.swift */,
 				05B1B85D21B1481F00D7880D /* DataLoaderModels.swift */,
 				05B1B86321B2EBBC00D7880D /* RemoteDataLoader.swift */,
+				05B1B86521B3F21300D7880D /* LocalDataLoader.swift */,
 				05B1B85F21B1761400D7880D /* RemoteModels.swift */,
+				05B1B86721B3F99500D7880D /* LocalModels.swift */,
 				05B1B82A21B048C400D7880D /* Assets.xcassets */,
 				05B1B82C21B048C400D7880D /* LaunchScreen.storyboard */,
 				05B1B82F21B048C400D7880D /* Info.plist */,
@@ -241,7 +247,9 @@
 				05B1B85421B13E8F00D7880D /* PostDetailDataSourceDelegate.swift in Sources */,
 				05B1B85821B1473F00D7880D /* PostViewModel.swift in Sources */,
 				05B1B85E21B1481F00D7880D /* DataLoaderModels.swift in Sources */,
+				05B1B86621B3F21300D7880D /* LocalDataLoader.swift in Sources */,
 				05B1B85621B1470E00D7880D /* APIClientModels.swift in Sources */,
+				05B1B86821B3F99500D7880D /* LocalModels.swift in Sources */,
 				05B1B85021B1382B00D7880D /* URLRequestFactory.swift in Sources */,
 				05B1B84821B0607200D7880D /* PostsDataSourceDelegate.swift in Sources */,
 			);

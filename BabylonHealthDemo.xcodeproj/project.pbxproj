@@ -26,6 +26,7 @@
 		05B1B86421B2EBBD00D7880D /* RemoteDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86321B2EBBC00D7880D /* RemoteDataLoader.swift */; };
 		05B1B86621B3F21300D7880D /* LocalDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86521B3F21300D7880D /* LocalDataLoader.swift */; };
 		05B1B86821B3F99500D7880D /* LocalModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86721B3F99500D7880D /* LocalModels.swift */; };
+		05B1B86A21B3FDC100D7880D /* ComposedDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86921B3FDC100D7880D /* ComposedDataLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		05B1B86321B2EBBC00D7880D /* RemoteDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDataLoader.swift; sourceTree = "<group>"; };
 		05B1B86521B3F21300D7880D /* LocalDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataLoader.swift; sourceTree = "<group>"; };
 		05B1B86721B3F99500D7880D /* LocalModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalModels.swift; sourceTree = "<group>"; };
+		05B1B86921B3FDC100D7880D /* ComposedDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposedDataLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				05B1B85D21B1481F00D7880D /* DataLoaderModels.swift */,
 				05B1B86321B2EBBC00D7880D /* RemoteDataLoader.swift */,
 				05B1B86521B3F21300D7880D /* LocalDataLoader.swift */,
+				05B1B86921B3FDC100D7880D /* ComposedDataLoader.swift */,
 				05B1B85F21B1761400D7880D /* RemoteModels.swift */,
 				05B1B86721B3F99500D7880D /* LocalModels.swift */,
 				05B1B82A21B048C400D7880D /* Assets.xcassets */,
@@ -235,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05B1B86A21B3FDC100D7880D /* ComposedDataLoader.swift in Sources */,
 				05B1B84E21B135D800D7880D /* Flow.swift in Sources */,
 				05B1B86021B1761400D7880D /* RemoteModels.swift in Sources */,
 				05B1B85C21B147F800D7880D /* Models.swift in Sources */,

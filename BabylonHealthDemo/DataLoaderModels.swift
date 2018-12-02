@@ -11,6 +11,7 @@ import Foundation
 enum DataLoaderError {
     case remote
     case local
+    case composed
 }
 
 enum DataLoaderResult {

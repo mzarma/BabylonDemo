@@ -8,24 +8,24 @@
 
 import Foundation
 
-enum GatewayResult {
+enum RepositoryResult {
     case success([LocalUser])
     case error(Error)
 }
 
-protocol Gateway {
-    func allUsers(completion: @escaping (GatewayResult) -> Void)
+protocol Repository {
+    func allUsers(completion: @escaping (RepositoryResult) -> Void)
 }
 
 final class LocalDataLoader: DataLoader {
-    private let gateway: Gateway
+    private let repository: Repository
     
-    init(gateway: Gateway) {
-        self.gateway = gateway
+    init(repository: Repository) {
+        self.repository = repository
     }
     
     func loadData(completion: @escaping (DataLoaderResult) -> Void) {
-        gateway.allUsers { result in
+        repository.allUsers { result in
             switch result {
             case .success(let users): completion(.success(LocalDataLoader.map(users)))
             case .error(_): completion(.error(.local))

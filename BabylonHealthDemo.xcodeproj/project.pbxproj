@@ -28,7 +28,7 @@
 		05B1B86821B3F99500D7880D /* LocalModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86721B3F99500D7880D /* LocalModels.swift */; };
 		05B1B86A21B3FDC100D7880D /* ComposedDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86921B3FDC100D7880D /* ComposedDataLoader.swift */; };
 		05B1B86C21B402EC00D7880D /* CoreDataGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86B21B402EC00D7880D /* CoreDataGateway.swift */; };
-		05B1B86F21B40E5800D7880D /* BabylonHealthDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86D21B40E5800D7880D /* BabylonHealthDemo.xcdatamodeld */; };
+		05B1B87221B42E5C00D7880D /* BabylonHealthDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B87021B42E5C00D7880D /* BabylonHealthDemo.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +67,7 @@
 		05B1B86721B3F99500D7880D /* LocalModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalModels.swift; sourceTree = "<group>"; };
 		05B1B86921B3FDC100D7880D /* ComposedDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposedDataLoader.swift; sourceTree = "<group>"; };
 		05B1B86B21B402EC00D7880D /* CoreDataGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataGateway.swift; sourceTree = "<group>"; };
-		05B1B86E21B40E5800D7880D /* BabylonHealthDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BabylonHealthDemo.xcdatamodel; sourceTree = "<group>"; };
+		05B1B87121B42E5C00D7880D /* BabylonHealthDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BabylonHealthDemo.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,9 +124,9 @@
 				05B1B85D21B1481F00D7880D /* DataLoaderModels.swift */,
 				05B1B86321B2EBBC00D7880D /* RemoteDataLoader.swift */,
 				05B1B86521B3F21300D7880D /* LocalDataLoader.swift */,
+				05B1B87021B42E5C00D7880D /* BabylonHealthDemo.xcdatamodeld */,
 				05B1B86921B3FDC100D7880D /* ComposedDataLoader.swift */,
 				05B1B86B21B402EC00D7880D /* CoreDataGateway.swift */,
-				05B1B86D21B40E5800D7880D /* BabylonHealthDemo.xcdatamodeld */,
 				05B1B85F21B1761400D7880D /* RemoteModels.swift */,
 				05B1B86721B3F99500D7880D /* LocalModels.swift */,
 				05B1B82A21B048C400D7880D /* Assets.xcassets */,
@@ -248,7 +248,7 @@
 				05B1B84E21B135D800D7880D /* Flow.swift in Sources */,
 				05B1B86021B1761400D7880D /* RemoteModels.swift in Sources */,
 				05B1B85C21B147F800D7880D /* Models.swift in Sources */,
-				05B1B86F21B40E5800D7880D /* BabylonHealthDemo.xcdatamodeld in Sources */,
+				05B1B87221B42E5C00D7880D /* BabylonHealthDemo.xcdatamodeld in Sources */,
 				05B1B84C21B12FA200D7880D /* PhonePostsViewFactory.swift in Sources */,
 				05B1B84621B04D0D00D7880D /* CustomTableViewController.swift in Sources */,
 				05B1B82121B048C300D7880D /* AppDelegate.swift in Sources */,
@@ -523,12 +523,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		05B1B86D21B40E5800D7880D /* BabylonHealthDemo.xcdatamodeld */ = {
+		05B1B87021B42E5C00D7880D /* BabylonHealthDemo.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				05B1B86E21B40E5800D7880D /* BabylonHealthDemo.xcdatamodel */,
+				05B1B87121B42E5C00D7880D /* BabylonHealthDemo.xcdatamodel */,
 			);
-			currentVersion = 05B1B86E21B40E5800D7880D /* BabylonHealthDemo.xcdatamodel */;
+			currentVersion = 05B1B87121B42E5C00D7880D /* BabylonHealthDemo.xcdatamodel */;
 			path = BabylonHealthDemo.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

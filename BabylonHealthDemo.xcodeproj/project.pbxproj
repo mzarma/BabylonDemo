@@ -27,7 +27,7 @@
 		05B1B86621B3F21300D7880D /* LocalDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86521B3F21300D7880D /* LocalDataLoader.swift */; };
 		05B1B86821B3F99500D7880D /* LocalModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86721B3F99500D7880D /* LocalModels.swift */; };
 		05B1B86A21B3FDC100D7880D /* ComposedDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86921B3FDC100D7880D /* ComposedDataLoader.swift */; };
-		05B1B86C21B402EC00D7880D /* CoreDataGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86B21B402EC00D7880D /* CoreDataGateway.swift */; };
+		05B1B86C21B402EC00D7880D /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86B21B402EC00D7880D /* CoreDataRepository.swift */; };
 		05B1B87221B42E5C00D7880D /* BabylonHealthDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B87021B42E5C00D7880D /* BabylonHealthDemo.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +66,7 @@
 		05B1B86521B3F21300D7880D /* LocalDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataLoader.swift; sourceTree = "<group>"; };
 		05B1B86721B3F99500D7880D /* LocalModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalModels.swift; sourceTree = "<group>"; };
 		05B1B86921B3FDC100D7880D /* ComposedDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposedDataLoader.swift; sourceTree = "<group>"; };
-		05B1B86B21B402EC00D7880D /* CoreDataGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataGateway.swift; sourceTree = "<group>"; };
+		05B1B86B21B402EC00D7880D /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
 		05B1B87121B42E5C00D7880D /* BabylonHealthDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BabylonHealthDemo.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,7 +126,7 @@
 				05B1B86521B3F21300D7880D /* LocalDataLoader.swift */,
 				05B1B87021B42E5C00D7880D /* BabylonHealthDemo.xcdatamodeld */,
 				05B1B86921B3FDC100D7880D /* ComposedDataLoader.swift */,
-				05B1B86B21B402EC00D7880D /* CoreDataGateway.swift */,
+				05B1B86B21B402EC00D7880D /* CoreDataRepository.swift */,
 				05B1B85F21B1761400D7880D /* RemoteModels.swift */,
 				05B1B86721B3F99500D7880D /* LocalModels.swift */,
 				05B1B82A21B048C400D7880D /* Assets.xcassets */,
@@ -258,7 +258,7 @@
 				05B1B85421B13E8F00D7880D /* PostDetailDataSourceDelegate.swift in Sources */,
 				05B1B85821B1473F00D7880D /* PostViewModel.swift in Sources */,
 				05B1B85E21B1481F00D7880D /* DataLoaderModels.swift in Sources */,
-				05B1B86C21B402EC00D7880D /* CoreDataGateway.swift in Sources */,
+				05B1B86C21B402EC00D7880D /* CoreDataRepository.swift in Sources */,
 				05B1B86621B3F21300D7880D /* LocalDataLoader.swift in Sources */,
 				05B1B85621B1470E00D7880D /* APIClientModels.swift in Sources */,
 				05B1B86821B3F99500D7880D /* LocalModels.swift in Sources */,

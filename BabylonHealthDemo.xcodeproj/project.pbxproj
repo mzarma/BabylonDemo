@@ -31,6 +31,7 @@
 		05B1B87221B42E5C00D7880D /* BabylonHealthDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B87021B42E5C00D7880D /* BabylonHealthDemo.xcdatamodeld */; };
 		05B1B87421B547ED00D7880D /* URLRequestFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B87321B547EC00D7880D /* URLRequestFactoryTest.swift */; };
 		05B1B87621B54A0F00D7880D /* APIClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B87521B54A0F00D7880D /* APIClientTest.swift */; };
+		05B1B87821B54E4700D7880D /* CoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B87721B54E4700D7880D /* CoordinatorTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		05B1B87121B42E5C00D7880D /* BabylonHealthDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BabylonHealthDemo.xcdatamodel; sourceTree = "<group>"; };
 		05B1B87321B547EC00D7880D /* URLRequestFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestFactoryTest.swift; sourceTree = "<group>"; };
 		05B1B87521B54A0F00D7880D /* APIClientTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTest.swift; sourceTree = "<group>"; };
+		05B1B87721B54E4700D7880D /* CoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				05B1B83A21B048C400D7880D /* Info.plist */,
 				05B1B87321B547EC00D7880D /* URLRequestFactoryTest.swift */,
 				05B1B87521B54A0F00D7880D /* APIClientTest.swift */,
+				05B1B87721B54E4700D7880D /* CoordinatorTest.swift */,
 			);
 			path = BabylonHealthDemoTests;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05B1B87421B547ED00D7880D /* URLRequestFactoryTest.swift in Sources */,
+				05B1B87821B54E4700D7880D /* CoordinatorTest.swift in Sources */,
 				05B1B87621B54A0F00D7880D /* APIClientTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

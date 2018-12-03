@@ -19,7 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let navigationController = UINavigationController()
         let client = APIClient(session: URLSession.shared)
-        let loader = RemoteDataLoader(client: client)
+        let repository = CoreDataRepository()
+        let remote = RemoteDataLoader(client: client)
+        let local = LocalDataLoader(repository: repository)
+        let loader = ComposedDataLoader(remote: remote, local: local)
         let postsViewFactory = PhonePostsViewFactory(loader: loader)
         flow = Flow(navigation: navigationController,
                     postsViewFactory: postsViewFactory,

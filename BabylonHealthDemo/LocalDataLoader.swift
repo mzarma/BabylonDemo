@@ -15,13 +15,18 @@ enum RepositoryResult {
 
 protocol Repository {
     func allUsers(completion: @escaping (RepositoryResult) -> Void)
+    func update(_ users: [LocalUser])
 }
 
-final class LocalDataLoader: DataLoader {
+final class LocalDataLoader: DataLoader, UsersSaver {
     private let repository: Repository
     
     init(repository: Repository) {
         self.repository = repository
+    }
+    
+    func update(_ users: [User]) {
+        repository.update(LocalDataLoader.map(users))
     }
     
     func loadData(completion: @escaping (DataLoaderResult) -> Void) {
@@ -61,3 +66,32 @@ private extension LocalDataLoader {
         }
     }
 }
+
+private extension LocalDataLoader {
+    static func map(_ users: [User]) -> [LocalUser] {
+        return users.map {
+            return LocalUser(id: $0.id,
+                        name: $0.name,
+                        username: $0.username,
+                        posts: LocalDataLoader.map($0.posts))
+        }
+    }
+    
+    static func map(_ posts: [Post]) -> [LocalPost] {
+        return posts.map {
+            return LocalPost(id: $0.id,
+                        title: $0.title,
+                        body: $0.body,
+                        comments: LocalDataLoader.map($0.comments))
+        }
+    }
+    
+    static func map(_ comments: [Comment]) -> [LocalComment] {
+        return comments.map {
+            return LocalComment(id: $0.id,
+                           name: $0.name,
+                           body: $0.body)
+        }
+    }
+}
+

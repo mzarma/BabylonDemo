@@ -8,22 +8,28 @@
 
 import Foundation
 
+protocol UsersSaver {
+    func update(_ users: [User])
+}
+
 final class ComposedDataLoader: DataLoader {
-    private let remoteDataLoader: RemoteDataLoader
-    private let localDataLoader: LocalDataLoader
+    private let remote: RemoteDataLoader
+    private let local: LocalDataLoader
     
-    init(remoteDataLoader: RemoteDataLoader, localDataLoader: LocalDataLoader) {
-        self.remoteDataLoader = remoteDataLoader
-        self.localDataLoader = localDataLoader
+    init(remote: RemoteDataLoader, local: LocalDataLoader) {
+        self.remote = remote
+        self.local = local
     }
     
     func loadData(completion: @escaping (DataLoaderResult) -> Void) {
-        remoteDataLoader.loadData { [weak self] result in
+        remote.loadData { [weak self] result in
             guard let self = self else { return }
             switch result {
-            case .success(let users): completion(.success(users))
+            case .success(let users):
+                self.local.update(users)
+                completion(.success(users))
             case .error(_):
-                self.localDataLoader.loadData { result in
+                self.local.loadData { result in
                     switch result {
                     case .success(let users): completion(.success(users))
                     case .error(_): completion(.error(.composed))

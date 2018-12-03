@@ -29,6 +29,10 @@ final class CoreDataRepository: Repository {
             print("Error fetching data from context \(error)")
         }
     }
+    
+    func update(_ users: [LocalUser]) {
+        
+    }
 }
 
 private extension CoreDataRepository {

@@ -12,11 +12,11 @@ final class APIClient {
     
     private let session: URLSession
     
-    init(session: URLSession) {
+    init(_ session: URLSession) {
         self.session = session
     }
     
-    func execute(request: URLRequest, completion: @escaping (APIClientResult) -> Void) {
+    func execute(_ request: URLRequest, completion: @escaping (APIClientResult) -> Void) {
         session.dataTask(with: request) { data, response, error in
             if let response = response as? HTTPURLResponse {
                 if let data = data, response.statusCode > 199, response.statusCode < 300 {

@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         let navigationController = UINavigationController()
-        let client = APIClient(session: URLSession.shared)
+        let client = APIClient(URLSession.shared)
         let repository = CoreDataRepository()
         let remote = RemoteDataLoader(client: client)
         let local = LocalDataLoader(repository: repository)

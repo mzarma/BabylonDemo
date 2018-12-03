@@ -48,7 +48,7 @@ final class RemoteDataLoader: DataLoader {
     
     private func load(_ request: URLRequest, _ group: DispatchGroup, _ mapping: @escaping (Data) -> Any?, completion: @escaping (Any) -> Void) {
         group.enter()
-        client.execute(request: request) { result in
+        client.execute(request) { result in
             switch result {
             case .success(let data):
                 guard let remoteDataMapped = mapping(data) else {

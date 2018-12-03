@@ -29,6 +29,7 @@
 		05B1B86A21B3FDC100D7880D /* ComposedDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86921B3FDC100D7880D /* ComposedDataLoader.swift */; };
 		05B1B86C21B402EC00D7880D /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86B21B402EC00D7880D /* CoreDataRepository.swift */; };
 		05B1B87221B42E5C00D7880D /* BabylonHealthDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B87021B42E5C00D7880D /* BabylonHealthDemo.xcdatamodeld */; };
+		05B1B87421B547ED00D7880D /* URLRequestFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B87321B547EC00D7880D /* URLRequestFactoryTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		05B1B86921B3FDC100D7880D /* ComposedDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposedDataLoader.swift; sourceTree = "<group>"; };
 		05B1B86B21B402EC00D7880D /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
 		05B1B87121B42E5C00D7880D /* BabylonHealthDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BabylonHealthDemo.xcdatamodel; sourceTree = "<group>"; };
+		05B1B87321B547EC00D7880D /* URLRequestFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestFactoryTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				05B1B83A21B048C400D7880D /* Info.plist */,
+				05B1B87321B547EC00D7880D /* URLRequestFactoryTest.swift */,
 			);
 			path = BabylonHealthDemoTests;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 					};
 					05B1B83321B048C400D7880D = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 						TestTargetID = 05B1B81C21B048C300D7880D;
 					};
 				};
@@ -271,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05B1B87421B547ED00D7880D /* URLRequestFactoryTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +458,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UCK9FU72KZ;
 				INFOPLIST_FILE = BabylonHealthDemoTests/Info.plist;
@@ -463,6 +469,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mzarmakoupis.BabylonHealthDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BabylonHealthDemo.app/BabylonHealthDemo";
@@ -474,6 +481,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UCK9FU72KZ;
 				INFOPLIST_FILE = BabylonHealthDemoTests/Info.plist;

@@ -36,13 +36,6 @@ final class PostDetailDataSourceDelegate: NSObject, UITableViewDataSource, UITab
     
     // MARK: - UITableViewDelegate
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row {
-        case TableStructure.description.rawValue: return 44
-        default: return 44
-        }
-    }
-    
     private func defaultCell(text: String) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.text = text

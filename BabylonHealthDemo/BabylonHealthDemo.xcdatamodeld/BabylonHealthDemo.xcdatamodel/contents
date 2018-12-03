@@ -10,14 +10,14 @@
         <attribute name="body" attributeType="String" syncable="YES"/>
         <attribute name="id" attributeType="Integer 64" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="title" attributeType="String" syncable="YES"/>
-        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CoreDataComment" inverseName="post" inverseEntity="CoreDataComment" syncable="YES"/>
+        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CoreDataComment" inverseName="post" inverseEntity="CoreDataComment" syncable="YES"/>
         <relationship name="user" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataUser" inverseName="posts" inverseEntity="CoreDataUser" syncable="YES"/>
     </entity>
     <entity name="CoreDataUser" representedClassName=".CoreDataUser" syncable="YES" codeGenerationType="class">
         <attribute name="id" attributeType="Integer 64" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="username" attributeType="String" syncable="YES"/>
-        <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CoreDataPost" inverseName="user" inverseEntity="CoreDataPost" syncable="YES"/>
+        <relationship name="posts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CoreDataPost" inverseName="user" inverseEntity="CoreDataPost" syncable="YES"/>
     </entity>
     <elements>
         <element name="CoreDataUser" positionX="-106.85546875" positionY="-278.734375" width="128" height="103"/>

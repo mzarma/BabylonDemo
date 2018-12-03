@@ -13,7 +13,7 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var flow: Flow?
+    var coordinator: Coordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
@@ -24,11 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let local = LocalDataLoader(repository: repository)
         let loader = ComposedDataLoader(remote: remote, local: local)
         let postsViewFactory = PhonePostsViewFactory(loader: loader)
-        flow = Flow(navigation: navigationController,
+        coordinator = Coordinator(navigation: navigationController,
                     postsViewFactory: postsViewFactory,
                     postDetailViewFactory: postsViewFactory)
         
-        flow?.start()
+        coordinator?.start()
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigationController

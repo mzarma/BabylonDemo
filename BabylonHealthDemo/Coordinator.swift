@@ -1,5 +1,5 @@
 //
-//  Flow.swift
+//  Coordinator.swift
 //  BabylonHealthDemo
 //
 //  Created by Michail Zarmakoupis on 30/11/2018.
@@ -16,7 +16,7 @@ protocol PostDetailViewFactory {
     func makePostDetailView(post: Post) -> UIViewController
 }
 
-final class Flow {
+final class Coordinator {
     private let navigation: UINavigationController
     private let postsViewFactory: PostsViewFactory
     private let postDetailViewFactory: PostDetailViewFactory

@@ -46,7 +46,7 @@ class CoordinatorTest: XCTestCase {
         XCTAssertEqual(postDetailViewFactory.selectedPost, post)
     }
     
-    // MARK: Helpers
+    // MARK: - Helpers
     
     private let navigation = NonAnimatingUINavigationController()
     private let postsViewFactory = PostsViewFactorySpy()

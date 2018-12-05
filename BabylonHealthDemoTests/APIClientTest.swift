@@ -96,7 +96,7 @@ class APIClientTest: XCTestCase {
         }
     }
     
-    // MARK: Helpers
+    // MARK: - Helpers
     
     private let session = URLSessionSpy()
     

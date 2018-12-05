@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class APIClient {
+class APIClient {
     
     private let session: URLSession
     

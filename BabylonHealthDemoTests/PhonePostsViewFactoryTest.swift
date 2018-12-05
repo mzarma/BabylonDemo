@@ -131,7 +131,7 @@ class PhonePostsViewFactoryTest: XCTestCase {
         XCTAssertEqual(postDetailView.cell(for: 5).textLabel?.text, "3")
     }
 
-    // MARK: Helpers
+    // MARK: - Helpers
     
     private let loader = DataLoaderStub()
     

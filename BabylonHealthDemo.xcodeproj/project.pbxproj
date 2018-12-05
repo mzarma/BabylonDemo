@@ -33,6 +33,7 @@
 		05B1B87621B54A0F00D7880D /* APIClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B87521B54A0F00D7880D /* APIClientTest.swift */; };
 		05B1B87821B54E4700D7880D /* CoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B87721B54E4700D7880D /* CoordinatorTest.swift */; };
 		05B1B87A21B5525B00D7880D /* PhonePostsViewFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B87921B5525B00D7880D /* PhonePostsViewFactoryTest.swift */; };
+		05B1B87D21B6907700D7880D /* RemoteDataLoaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B87C21B6907700D7880D /* RemoteDataLoaderTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		05B1B87521B54A0F00D7880D /* APIClientTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTest.swift; sourceTree = "<group>"; };
 		05B1B87721B54E4700D7880D /* CoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTest.swift; sourceTree = "<group>"; };
 		05B1B87921B5525B00D7880D /* PhonePostsViewFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhonePostsViewFactoryTest.swift; sourceTree = "<group>"; };
+		05B1B87C21B6907700D7880D /* RemoteDataLoaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataLoaderTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				05B1B87521B54A0F00D7880D /* APIClientTest.swift */,
 				05B1B87921B5525B00D7880D /* PhonePostsViewFactoryTest.swift */,
 				05B1B87721B54E4700D7880D /* CoordinatorTest.swift */,
+				05B1B87C21B6907700D7880D /* RemoteDataLoaderTest.swift */,
 			);
 			path = BabylonHealthDemoTests;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05B1B87A21B5525B00D7880D /* PhonePostsViewFactoryTest.swift in Sources */,
+				05B1B87D21B6907700D7880D /* RemoteDataLoaderTest.swift in Sources */,
 				05B1B87421B547ED00D7880D /* URLRequestFactoryTest.swift in Sources */,
 				05B1B87821B54E4700D7880D /* CoordinatorTest.swift in Sources */,
 				05B1B87621B54A0F00D7880D /* APIClientTest.swift in Sources */,

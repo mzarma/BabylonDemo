@@ -111,7 +111,7 @@ private extension RemoteDataLoader {
                                     comments: remoteComments
                                         .filter { $0.postId == postId }
                                         .map {
-                                            return Comment(id: $0.id, name: $0.name, body: $0.name)
+                                            return Comment(id: $0.id, name: $0.name, body: $0.body)
                                         }
                                     )
                     }

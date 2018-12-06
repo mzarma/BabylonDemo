@@ -10,7 +10,7 @@ import Foundation
 
 enum RepositoryResult {
     case success([LocalUser])
-    case error(Error)
+    case error
 }
 
 protocol Repository {
@@ -33,7 +33,7 @@ final class LocalDataLoader: DataLoader, UsersSaver {
         repository.allUsers { result in
             switch result {
             case .success(let users): completion(.success(LocalDataLoader.map(users)))
-            case .error(_): completion(.error(.local))
+            case .error: completion(.error(.local))
             }
         }
     }

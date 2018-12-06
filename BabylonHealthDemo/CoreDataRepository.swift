@@ -27,7 +27,7 @@ final class CoreDataRepository: Repository {
             completion(.success(CoreDataRepository.localUsers(from: users)))
         } catch {
             print("Error fetching data from context \(error)")
-            completion(.error(error))
+            completion(.error)
         }
     }
     

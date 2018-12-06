@@ -18,7 +18,7 @@ protocol Repository {
     func update(_ users: [LocalUser])
 }
 
-final class LocalDataLoader: DataLoader, UsersSaver {
+final class LocalDataLoader: DataLoader, DataSaver {
     private let repository: Repository
     
     init(repository: Repository) {

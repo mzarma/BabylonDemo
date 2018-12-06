@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let repository = CoreDataRepository()
         let remote = RemoteDataLoader(client: client)
         let local = LocalDataLoader(repository: repository)
-        let loader = ComposedDataLoader(remote: remote, local: local)
+        let loader = ComposedDataLoader(remote: remote, local: local, saver: local)
         let postsViewFactory = PhonePostsViewFactory(loader: loader)
         coordinator = Coordinator(navigation: navigationController,
                     postsViewFactory: postsViewFactory,

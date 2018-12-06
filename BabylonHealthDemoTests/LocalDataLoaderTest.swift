@@ -41,12 +41,12 @@ class LocalDataLoaderTest: XCTestCase {
         XCTAssertEqual(repository.allUsersCallCount, 0)
         
         sut.loadData { expectedResult = $0 }
-        repository.complete!(.success(localUsers))
+        repository.complete!(.success(testLocalUsers))
         
         XCTAssertEqual(repository.allUsersCallCount, 1)
         switch expectedResult! {
         case .success(let mappedUsers):
-            XCTAssertEqual(mappedUsers, users)
+            XCTAssertEqual(mappedUsers, testUsers)
         case .error(_): XCTFail("Should succeed")
         }
     }
@@ -56,10 +56,10 @@ class LocalDataLoaderTest: XCTestCase {
         
         XCTAssertEqual(repository.updateCallCount, 0)
         
-        sut.update(users)
+        sut.update(testUsers)
         
         XCTAssertEqual(repository.updateCallCount, 1)
-        XCTAssertEqual(repository.localUsers, localUsers)
+        XCTAssertEqual(repository.localUsers, testLocalUsers)
     }
     
     // MARK: - Helpers
@@ -88,34 +88,4 @@ class LocalDataLoaderTest: XCTestCase {
             localUsers = users
         }
     }
-    
-    private let localUsers = [
-        LocalUser(id: 1, name: "user name 1",
-                  username: "user username 1",posts: [
-            LocalPost(id: 1, title: "post title 1",
-                      body: "post body 1", comments: [
-                LocalComment(id: 1, name: "comment name 1",
-                             body: "comment body 1"),
-                LocalComment(id: 2, name: "comment name 2",
-                             body: "comment body 2")]),
-            LocalPost(id: 2, title: "post title 2",
-                      body: "post body 2", comments: [])]),
-        LocalUser(id: 2, name: "user name 2",
-                  username: "user username 2", posts: [])
-    ]
-    
-    private let users = [
-        User(id: 1, name: "user name 1",
-                  username: "user username 1",posts: [
-                    Post(id: 1, title: "post title 1",
-                              body: "post body 1", comments: [
-                                Comment(id: 1, name: "comment name 1",
-                                             body: "comment body 1"),
-                                Comment(id: 2, name: "comment name 2",
-                                             body: "comment body 2")]),
-                    Post(id: 2, title: "post title 2",
-                              body: "post body 2", comments: [])]),
-        User(id: 2, name: "user name 2",
-                  username: "user username 2", posts: [])
-    ]
 }

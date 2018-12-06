@@ -133,7 +133,7 @@ class RemoteDataLoaderTest: XCTestCase {
         XCTAssertEqual(client.requests, expectedRequests)
         switch expectedResult! {
         case .success(let users):
-            XCTAssertEqual(users, expectedUsers)
+            XCTAssertEqual(users, testUsers)
         case .error(_): XCTFail("Should succeed")
         }
     }
@@ -141,6 +141,10 @@ class RemoteDataLoaderTest: XCTestCase {
     // MARK: - Helpers
     
     private let client = APIClientStub()
+    
+    private let expectedRequests = [URLRequestFactory.getPosts(),
+                                    URLRequestFactory.getUsers(),
+                                    URLRequestFactory.getComments()]
     
     private func makeSUT() -> RemoteDataLoader {
         let sut = RemoteDataLoader(client: client)
@@ -170,21 +174,4 @@ class RemoteDataLoaderTest: XCTestCase {
             }
         }
     }
-    
-    private let validPostsData = "[{\"userId\": 1,\"id\": 1,\"title\": \"post title 1\",\"body\": \"post body 1\"},{\"userId\": 1,\"id\": 2,\"title\": \"post title 2\",\"body\": \"post body 2\"}]".data(using: .utf8)!
-    private let validUsersData = "[{\"id\": 1,\"name\": \"user name 1\",\"username\": \"user username 1\",\"email\": \"\",\"address\": {\"street\": \"\",\"suite\": \"\",\"city\": \"\",\"zipcode\": \"\",\"geo\": {\"lat\": \"\",\"lng\": \"\"}},\"phone\": \"\",\"website\": \"\",\"company\": {\"name\": \"\",\"catchPhrase\": \"\",\"bs\": \"\"}},{\"id\": 2,\"name\": \"user name 2\",\"username\": \"user username 2\",\"email\": \"\",\"address\": {\"street\": \"\",\"suite\": \"\",\"city\": \"\",\"zipcode\": \"\",\"geo\": {\"lat\": \"\",\"lng\": \"\"}},\"phone\": \"\",\"website\": \"\",\"company\": {\"name\": \"\",\"catchPhrase\": \"\",\"bs\": \"\"}}]".data(using: .utf8)!
-    private let validCommentsData = "[{\"postId\": 1,\"id\": 1,\"name\": \"comment name 1\",\"email\": \"\",\"body\": \"comment body 1\"},{\"postId\": 1,\"id\": 2,\"name\": \"comment name 2\",\"email\": \"\",\"body\": \"comment body 2\"}]".data(using: .utf8)!
-    
-    private let expectedRequests = [URLRequestFactory.getPosts(),
-                                    URLRequestFactory.getUsers(),
-                                    URLRequestFactory.getComments()]
-    
-    private let expectedUsers = [
-        User(id: 1, name: "user name 1", username: "user username 1",
-             posts: [
-                Post(id: 1, title: "post title 1", body: "post body 1", comments: [
-                    Comment(id: 1, name: "comment name 1", body: "comment body 1"),
-                    Comment(id: 2, name: "comment name 2", body: "comment body 2")]),
-                Post(id: 2, title: "post title 2", body: "post body 2", comments: [])]),
-        User(id: 2, name: "user name 2", username: "user username 2", posts: [])]
 }

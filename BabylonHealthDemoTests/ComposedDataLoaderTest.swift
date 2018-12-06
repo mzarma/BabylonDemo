@@ -1,5 +1,5 @@
 //
-//  ComposableDataLoaderTest.swift
+//  ComposedDataLoaderTest.swift
 //  BabylonHealthDemoTests
 //
 //  Created by Michail Zarmakoupis on 06/12/2018.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import BabylonHealthDemo
 
-class ComposableDataLoaderTest: XCTestCase {
+class ComposedDataLoaderTest: XCTestCase {
     private weak var weakSUT: ComposedDataLoader?
     
     override func tearDown() {
@@ -38,11 +38,11 @@ class ComposableDataLoaderTest: XCTestCase {
         
         sut.loadData { expectedResult = $0 }
         client.stubResults = []
-        repository.complete!(.success(localUsers))
+        repository.complete!(.success(testLocalUsers))
         
         switch expectedResult! {
         case .success(let mappedUsers):
-            XCTAssertEqual(mappedUsers, users)
+            XCTAssertEqual(mappedUsers, testUsers)
         case .error(_): XCTFail("Should succeed")
         }
     }
@@ -58,7 +58,7 @@ class ComposableDataLoaderTest: XCTestCase {
 
         switch expectedResult! {
         case .success(let mappedUsers):
-            XCTAssertEqual(mappedUsers, users)
+            XCTAssertEqual(mappedUsers, testUsers)
         case .error(_): XCTFail("Should succeed")
         }
     }
@@ -73,7 +73,7 @@ class ComposableDataLoaderTest: XCTestCase {
         sut.loadData { _ in }
         
         XCTAssertEqual(saver.updateCallCount, 1)
-        XCTAssertEqual(saver.mappedUsers, users)
+        XCTAssertEqual(saver.mappedUsers, testUsers)
     }
 
     // MARK: - Helpers
@@ -134,38 +134,4 @@ class ComposableDataLoaderTest: XCTestCase {
             mappedUsers = users
         }
     }
-
-    private let localUsers = [
-        LocalUser(id: 1, name: "user name 1",
-                  username: "user username 1",posts: [
-                    LocalPost(id: 1, title: "post title 1",
-                              body: "post body 1", comments: [
-                                LocalComment(id: 1, name: "comment name 1",
-                                             body: "comment body 1"),
-                                LocalComment(id: 2, name: "comment name 2",
-                                             body: "comment body 2")]),
-                    LocalPost(id: 2, title: "post title 2",
-                              body: "post body 2", comments: [])]),
-        LocalUser(id: 2, name: "user name 2",
-                  username: "user username 2", posts: [])
-    ]
-    
-    private let users = [
-        User(id: 1, name: "user name 1",
-             username: "user username 1",posts: [
-                Post(id: 1, title: "post title 1",
-                     body: "post body 1", comments: [
-                        Comment(id: 1, name: "comment name 1",
-                                body: "comment body 1"),
-                        Comment(id: 2, name: "comment name 2",
-                                body: "comment body 2")]),
-                Post(id: 2, title: "post title 2",
-                     body: "post body 2", comments: [])]),
-        User(id: 2, name: "user name 2",
-             username: "user username 2", posts: [])
-    ]
-    
-    private let validPostsData = "[{\"userId\": 1,\"id\": 1,\"title\": \"post title 1\",\"body\": \"post body 1\"},{\"userId\": 1,\"id\": 2,\"title\": \"post title 2\",\"body\": \"post body 2\"}]".data(using: .utf8)!
-    private let validUsersData = "[{\"id\": 1,\"name\": \"user name 1\",\"username\": \"user username 1\",\"email\": \"\",\"address\": {\"street\": \"\",\"suite\": \"\",\"city\": \"\",\"zipcode\": \"\",\"geo\": {\"lat\": \"\",\"lng\": \"\"}},\"phone\": \"\",\"website\": \"\",\"company\": {\"name\": \"\",\"catchPhrase\": \"\",\"bs\": \"\"}},{\"id\": 2,\"name\": \"user name 2\",\"username\": \"user username 2\",\"email\": \"\",\"address\": {\"street\": \"\",\"suite\": \"\",\"city\": \"\",\"zipcode\": \"\",\"geo\": {\"lat\": \"\",\"lng\": \"\"}},\"phone\": \"\",\"website\": \"\",\"company\": {\"name\": \"\",\"catchPhrase\": \"\",\"bs\": \"\"}}]".data(using: .utf8)!
-    private let validCommentsData = "[{\"postId\": 1,\"id\": 1,\"name\": \"comment name 1\",\"email\": \"\",\"body\": \"comment body 1\"},{\"postId\": 1,\"id\": 2,\"name\": \"comment name 2\",\"email\": \"\",\"body\": \"comment body 2\"}]".data(using: .utf8)!
 }

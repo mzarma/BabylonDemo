@@ -10,7 +10,7 @@ import UIKit
 
 class TableViewResizableCell: UITableViewCell {
     private static let font = UIFont(name: "Avenir", size: 18)!
-    private static let margin: CGFloat = 8
+    private static let margin: CGFloat = 12
     
     private let label = UILabel()
     

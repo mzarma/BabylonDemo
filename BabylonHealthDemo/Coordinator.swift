@@ -36,6 +36,13 @@ final class Coordinator {
             self.navigation.pushViewController(postDetailView, animated: true)
         }
         
+        setupNavigation()
         navigation.setViewControllers([postsView], animated: false)
+    }
+    
+    private func setupNavigation() {
+        navigation.navigationBar.barTintColor = UIColor.customPurple
+        navigation.navigationBar.tintColor = .white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
     }
 }

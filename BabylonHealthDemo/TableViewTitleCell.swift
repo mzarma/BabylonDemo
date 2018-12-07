@@ -10,7 +10,7 @@ import UIKit
 
 class TableViewTitleCell: UITableViewCell {
     private static let font = UIFont(name: "Avenir-Black", size: 18)!
-    private static let margin: CGFloat = 8
+    private static let margin: CGFloat = 12
     
     private let label = UILabel()
     

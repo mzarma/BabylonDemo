@@ -27,6 +27,7 @@ final class PhonePostsViewFactory: PostsViewFactory, PostDetailViewFactory {
         }
         
         let viewController = CustomTableViewController(dataSource: dataSourceDelegate, delegate: dataSourceDelegate)
+        viewController.title = PostViewModel.barTitle
         
         loader.loadData { [weak self] result in
             switch result {
@@ -49,6 +50,8 @@ final class PhonePostsViewFactory: PostsViewFactory, PostDetailViewFactory {
     func makePostDetailView(post: Post) -> UIViewController {
         let postDetail = PostDetailViewModel(post: post, users: users)
         let dataSourceDelegate = PostDetailDataSourceDelegate(postDetail: postDetail)
-        return CustomTableViewController(dataSource: dataSourceDelegate, delegate: dataSourceDelegate)
+        let viewController = CustomTableViewController(dataSource: dataSourceDelegate, delegate: dataSourceDelegate)
+        viewController.title = postDetail.title
+        return viewController
     }
 }

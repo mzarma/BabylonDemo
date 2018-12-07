@@ -58,6 +58,8 @@ class PhonePostsViewFactoryTest: XCTestCase {
         XCTAssertEqual(postsView.cell(for: 1).textLabel?.text, "title12")
         XCTAssertEqual(postsView.cell(for: 2).textLabel?.text, "title21")
         XCTAssertEqual(postsView.cell(for: 3).textLabel?.text, "title22")
+        
+        XCTAssertEqual(postsView.title, "Posts")
     }
     
     func test_doesNotTriggerSelection_whenRowSelectionAndNoUsers() {
@@ -129,6 +131,8 @@ class PhonePostsViewFactoryTest: XCTestCase {
         XCTAssertEqual(postDetailView.cell(for: 3).textLabel?.text, "body21")
         XCTAssertEqual(postDetailView.cell(for: 4).textLabel?.text, "Comments")
         XCTAssertEqual(postDetailView.cell(for: 5).textLabel?.text, "3")
+        
+        XCTAssertEqual(postDetailView.title, "title21")
     }
 
     // MARK: - Helpers

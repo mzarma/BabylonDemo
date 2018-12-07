@@ -12,6 +12,10 @@ struct PostDetailViewModel {
     let post: Post
     let users: [User]
     
+    var title: String {
+        return post.title
+    }
+    
     var author: String {
         return users.filter({ user in
             return !user.posts.filter({ post in

@@ -14,4 +14,6 @@ struct PostViewModel {
     var title: String {
         return post.title
     }
+    
+    static let barTitle = "Posts"
 }

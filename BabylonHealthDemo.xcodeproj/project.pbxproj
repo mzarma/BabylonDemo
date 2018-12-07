@@ -113,6 +113,163 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05A1D45621BA9E8700CAA7F7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				05A1D45721BA9ECB00CAA7F7 /* Shared */,
+				05A1D45821BA9ED800CAA7F7 /* Posts */,
+				05A1D45921BA9EE400CAA7F7 /* PostDetail */,
+				05B1B82C21B048C400D7880D /* LaunchScreen.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		05A1D45721BA9ECB00CAA7F7 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				05A1D45221BA858D00CAA7F7 /* TableViewTitleCell.swift */,
+				05A1D45421BA894000CAA7F7 /* UIColorHelpers.swift */,
+				05B1B84521B04D0D00D7880D /* CustomTableViewController.swift */,
+				05A1D45021BA6A8E00CAA7F7 /* TableViewResizableCell.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		05A1D45821BA9ED800CAA7F7 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				05B1B84721B0607200D7880D /* PostsDataSourceDelegate.swift */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		05A1D45921BA9EE400CAA7F7 /* PostDetail */ = {
+			isa = PBXGroup;
+			children = (
+				05B1B85321B13E8F00D7880D /* PostDetailDataSourceDelegate.swift */,
+			);
+			path = PostDetail;
+			sourceTree = "<group>";
+		};
+		05A1D45A21BA9F0E00CAA7F7 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				05B1B84D21B135D800D7880D /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		05A1D45B21BA9F3400CAA7F7 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				05B1B85721B1473F00D7880D /* PostViewModel.swift */,
+				05B1B85921B147C500D7880D /* PostDetailViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		05A1D45C21BAA00000CAA7F7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				05B1B82021B048C300D7880D /* AppDelegate.swift */,
+				05B1B84B21B12FA200D7880D /* PhonePostsViewFactory.swift */,
+				05B1B86921B3FDC100D7880D /* RemoteWithLocalFallbackDataLoader.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		05A1D45D21BAA00D00CAA7F7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				05B1B85B21B147F800D7880D /* Models.swift */,
+				05B1B85D21B1481F00D7880D /* DataLoaderModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		05A1D45F21BAA08900CAA7F7 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				05A1D46921BAA33E00CAA7F7 /* Models */,
+				05B1B86521B3F21300D7880D /* LocalDataLoaderAndSaver.swift */,
+				05B1B86B21B402EC00D7880D /* CoreDataRepository.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		05A1D46021BAA0CD00CAA7F7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				05B1B87921B5525B00D7880D /* PhonePostsViewFactoryTest.swift */,
+				05A1D44221B9263800CAA7F7 /* RemoteWithLocalFallbackDataLoaderTest.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		05A1D46121BAA0D500CAA7F7 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				05B1B87721B54E4700D7880D /* CoordinatorTest.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		05A1D46221BAA0F300CAA7F7 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				05A1D44021B8104200CAA7F7 /* LocalDataLoaderAndSaverTest.swift */,
+				05A1D44C21B983E700CAA7F7 /* CoreDataRepositoryTest.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		05A1D46321BAA13300CAA7F7 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				05A1D46B21BACE5500CAA7F7 /* Models */,
+				05B1B84321B04B5400D7880D /* APIClient.swift */,
+				05B1B84F21B1382B00D7880D /* URLRequestFactory.swift */,
+				05B1B86321B2EBBC00D7880D /* RemoteDataLoader.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		05A1D46421BAA14F00CAA7F7 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				05B1B87521B54A0F00D7880D /* APIClientTest.swift */,
+				05B1B87321B547EC00D7880D /* URLRequestFactoryTest.swift */,
+				05B1B87C21B6907700D7880D /* RemoteDataLoaderTest.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		05A1D46721BAA19600CAA7F7 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				05A1D44421B9776F00CAA7F7 /* Helpers.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		05A1D46921BAA33E00CAA7F7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				05B1B86721B3F99500D7880D /* LocalModels.swift */,
+				05B1B87021B42E5C00D7880D /* BabylonHealthDemo.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		05A1D46B21BACE5500CAA7F7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				05B1B85521B1470E00D7880D /* APIClientModels.swift */,
+				05B1B85F21B1761400D7880D /* RemoteModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		05B1B81421B048C300D7880D = {
 			isa = PBXGroup;
 			children = (
@@ -134,31 +291,14 @@
 		05B1B81F21B048C300D7880D /* BabylonHealthDemo */ = {
 			isa = PBXGroup;
 			children = (
-				05B1B82021B048C300D7880D /* AppDelegate.swift */,
-				05B1B84F21B1382B00D7880D /* URLRequestFactory.swift */,
-				05B1B84321B04B5400D7880D /* APIClient.swift */,
-				05B1B85521B1470E00D7880D /* APIClientModels.swift */,
-				05B1B84B21B12FA200D7880D /* PhonePostsViewFactory.swift */,
-				05B1B84D21B135D800D7880D /* Coordinator.swift */,
-				05B1B84521B04D0D00D7880D /* CustomTableViewController.swift */,
-				05B1B84721B0607200D7880D /* PostsDataSourceDelegate.swift */,
-				05B1B85721B1473F00D7880D /* PostViewModel.swift */,
-				05B1B85321B13E8F00D7880D /* PostDetailDataSourceDelegate.swift */,
-				05B1B85B21B147F800D7880D /* Models.swift */,
-				05B1B85921B147C500D7880D /* PostDetailViewModel.swift */,
-				05B1B85D21B1481F00D7880D /* DataLoaderModels.swift */,
-				05B1B86321B2EBBC00D7880D /* RemoteDataLoader.swift */,
-				05B1B86521B3F21300D7880D /* LocalDataLoaderAndSaver.swift */,
-				05B1B87021B42E5C00D7880D /* BabylonHealthDemo.xcdatamodeld */,
-				05B1B86921B3FDC100D7880D /* RemoteWithLocalFallbackDataLoader.swift */,
-				05B1B86B21B402EC00D7880D /* CoreDataRepository.swift */,
-				05B1B85F21B1761400D7880D /* RemoteModels.swift */,
-				05B1B86721B3F99500D7880D /* LocalModels.swift */,
-				05A1D45021BA6A8E00CAA7F7 /* TableViewResizableCell.swift */,
-				05A1D45221BA858D00CAA7F7 /* TableViewTitleCell.swift */,
-				05A1D45421BA894000CAA7F7 /* UIColorHelpers.swift */,
+				05A1D45C21BAA00000CAA7F7 /* Main */,
+				05A1D45A21BA9F0E00CAA7F7 /* Coordinator */,
+				05A1D45621BA9E8700CAA7F7 /* UI */,
+				05A1D45B21BA9F3400CAA7F7 /* Presentation */,
+				05A1D45D21BAA00D00CAA7F7 /* Models */,
+				05A1D46321BAA13300CAA7F7 /* Networking */,
+				05A1D45F21BAA08900CAA7F7 /* Persistence */,
 				05B1B82A21B048C400D7880D /* Assets.xcassets */,
-				05B1B82C21B048C400D7880D /* LaunchScreen.storyboard */,
 				05B1B82F21B048C400D7880D /* Info.plist */,
 			);
 			path = BabylonHealthDemo;
@@ -168,15 +308,11 @@
 			isa = PBXGroup;
 			children = (
 				05B1B83A21B048C400D7880D /* Info.plist */,
-				05B1B87321B547EC00D7880D /* URLRequestFactoryTest.swift */,
-				05B1B87521B54A0F00D7880D /* APIClientTest.swift */,
-				05B1B87921B5525B00D7880D /* PhonePostsViewFactoryTest.swift */,
-				05B1B87721B54E4700D7880D /* CoordinatorTest.swift */,
-				05B1B87C21B6907700D7880D /* RemoteDataLoaderTest.swift */,
-				05A1D44021B8104200CAA7F7 /* LocalDataLoaderAndSaverTest.swift */,
-				05A1D44221B9263800CAA7F7 /* RemoteWithLocalFallbackDataLoaderTest.swift */,
-				05A1D44421B9776F00CAA7F7 /* Helpers.swift */,
-				05A1D44C21B983E700CAA7F7 /* CoreDataRepositoryTest.swift */,
+				05A1D46721BAA19600CAA7F7 /* Shared */,
+				05A1D46021BAA0CD00CAA7F7 /* Main */,
+				05A1D46121BAA0D500CAA7F7 /* Coordinator */,
+				05A1D46421BAA14F00CAA7F7 /* Networking */,
+				05A1D46221BAA0F300CAA7F7 /* Persistence */,
 			);
 			path = BabylonHealthDemoTests;
 			sourceTree = "<group>";

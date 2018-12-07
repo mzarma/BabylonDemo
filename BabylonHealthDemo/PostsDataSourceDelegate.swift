@@ -40,18 +40,18 @@ final class PostsDataSourceDelegate: NSObject, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let width = tableView.bounds.width
-        let height = ResizableTableViewCell.height(constrainedTo: width, for: posts[indexPath.row].title)
+        let height = TableViewResizableCell.height(constrainedTo: width, for: posts[indexPath.row].title)
         return height > 44 ? height : 44
     }
     
     private func configuredNoPostsCell() -> UITableViewCell {
-        let cell = ResizableTableViewCell()
+        let cell = TableViewResizableCell()
         cell.labelText = noPostsText
         return cell
     }
     
     private func configuredPostsCell(at indexPath: IndexPath) -> UITableViewCell {
-        let cell = ResizableTableViewCell()
+        let cell = TableViewResizableCell()
         cell.labelText = posts[indexPath.row].title
         return cell
     }

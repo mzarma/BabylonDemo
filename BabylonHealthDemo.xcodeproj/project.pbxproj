@@ -12,7 +12,8 @@
 		05A1D44521B9776F00CAA7F7 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1D44421B9776F00CAA7F7 /* Helpers.swift */; };
 		05A1D44D21B983E700CAA7F7 /* CoreDataRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1D44C21B983E700CAA7F7 /* CoreDataRepositoryTest.swift */; };
 		05A1D44F21B99F0C00CAA7F7 /* BabylonHealthDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B87021B42E5C00D7880D /* BabylonHealthDemo.xcdatamodeld */; };
-		05A1D45121BA6A8E00CAA7F7 /* ResizableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1D45021BA6A8E00CAA7F7 /* ResizableTableViewCell.swift */; };
+		05A1D45121BA6A8E00CAA7F7 /* TableViewResizableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1D45021BA6A8E00CAA7F7 /* TableViewResizableCell.swift */; };
+		05A1D45321BA858D00CAA7F7 /* TableViewTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1D45221BA858D00CAA7F7 /* TableViewTitleCell.swift */; };
 		05B1B82121B048C300D7880D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B82021B048C300D7880D /* AppDelegate.swift */; };
 		05B1B82B21B048C400D7880D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05B1B82A21B048C400D7880D /* Assets.xcassets */; };
 		05B1B82E21B048C400D7880D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B1B82C21B048C400D7880D /* LaunchScreen.storyboard */; };
@@ -57,7 +58,8 @@
 		05A1D44221B9263800CAA7F7 /* ComposedDataLoaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposedDataLoaderTest.swift; sourceTree = "<group>"; };
 		05A1D44421B9776F00CAA7F7 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		05A1D44C21B983E700CAA7F7 /* CoreDataRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepositoryTest.swift; sourceTree = "<group>"; };
-		05A1D45021BA6A8E00CAA7F7 /* ResizableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableTableViewCell.swift; sourceTree = "<group>"; };
+		05A1D45021BA6A8E00CAA7F7 /* TableViewResizableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewResizableCell.swift; sourceTree = "<group>"; };
+		05A1D45221BA858D00CAA7F7 /* TableViewTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewTitleCell.swift; sourceTree = "<group>"; };
 		05B1B81D21B048C300D7880D /* BabylonHealthDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabylonHealthDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05B1B82021B048C300D7880D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05B1B82A21B048C400D7880D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,7 +152,8 @@
 				05B1B86B21B402EC00D7880D /* CoreDataRepository.swift */,
 				05B1B85F21B1761400D7880D /* RemoteModels.swift */,
 				05B1B86721B3F99500D7880D /* LocalModels.swift */,
-				05A1D45021BA6A8E00CAA7F7 /* ResizableTableViewCell.swift */,
+				05A1D45021BA6A8E00CAA7F7 /* TableViewResizableCell.swift */,
+				05A1D45221BA858D00CAA7F7 /* TableViewTitleCell.swift */,
 				05B1B82A21B048C400D7880D /* Assets.xcassets */,
 				05B1B82C21B048C400D7880D /* LaunchScreen.storyboard */,
 				05B1B82F21B048C400D7880D /* Info.plist */,
@@ -283,7 +286,8 @@
 				05B1B87221B42E5C00D7880D /* BabylonHealthDemo.xcdatamodeld in Sources */,
 				05B1B84C21B12FA200D7880D /* PhonePostsViewFactory.swift in Sources */,
 				05B1B84621B04D0D00D7880D /* CustomTableViewController.swift in Sources */,
-				05A1D45121BA6A8E00CAA7F7 /* ResizableTableViewCell.swift in Sources */,
+				05A1D45121BA6A8E00CAA7F7 /* TableViewResizableCell.swift in Sources */,
+				05A1D45321BA858D00CAA7F7 /* TableViewTitleCell.swift in Sources */,
 				05B1B82121B048C300D7880D /* AppDelegate.swift in Sources */,
 				05B1B86421B2EBBD00D7880D /* RemoteDataLoader.swift in Sources */,
 				05B1B85A21B147C500D7880D /* PostDetailViewModel.swift in Sources */,

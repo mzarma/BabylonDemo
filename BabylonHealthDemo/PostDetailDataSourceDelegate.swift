@@ -24,11 +24,11 @@ final class PostDetailDataSourceDelegate: NSObject, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
-        case TableStructure.authorTitle.rawValue: return resizableCell(text: PostDetailViewModel.authorTitle)
+        case TableStructure.authorTitle.rawValue: return titleCell(text: PostDetailViewModel.authorTitle)
         case TableStructure.author.rawValue: return resizableCell(text: postDetail.author)
-        case TableStructure.descriptionTitle.rawValue: return resizableCell(text: PostDetailViewModel.descriptionTitle)
+        case TableStructure.descriptionTitle.rawValue: return titleCell(text: PostDetailViewModel.descriptionTitle)
         case TableStructure.description.rawValue: return resizableCell(text: postDetail.description)
-        case TableStructure.numberOfCommentsTitle.rawValue: return resizableCell(text: PostDetailViewModel.numberOfCommentsTitle)
+        case TableStructure.numberOfCommentsTitle.rawValue: return titleCell(text: PostDetailViewModel.numberOfCommentsTitle)
         case TableStructure.numberOfComments.rawValue: return resizableCell(text: postDetail.numberOfComments)
         default: return UITableViewCell()
         }
@@ -40,13 +40,20 @@ final class PostDetailDataSourceDelegate: NSObject, UITableViewDataSource, UITab
         let width = tableView.bounds.width
 
         switch indexPath.row {
-        case TableStructure.description.rawValue: return ResizableTableViewCell.height(constrainedTo: width, for: postDetail.description)
+        case TableStructure.description.rawValue: return TableViewResizableCell.height(constrainedTo: width, for: postDetail.description)
         default: return 44
         }
     }
+    
+    private func titleCell(text: String) -> UITableViewCell {
+        let cell = TableViewTitleCell()
+        cell.labelText = text
+        cell.selectionStyle = .none
+        return cell
+    }
 
     private func resizableCell(text: String) -> UITableViewCell {
-        let cell = ResizableTableViewCell()
+        let cell = TableViewResizableCell()
         cell.labelText = text
         cell.selectionStyle = .none
         return cell

@@ -175,8 +175,8 @@ extension CustomTableViewController {
         return tableView.dataSource!.tableView(tableView, numberOfRowsInSection: 0)
     }
     
-    func cell(for row: Int) -> ResizableTableViewCell {
-        return tableView.dataSource!.tableView(tableView, cellForRowAt: indexPath(for: row)) as! ResizableTableViewCell
+    func cell(for row: Int) -> TableViewResizableCell {
+        return tableView.dataSource!.tableView(tableView, cellForRowAt: indexPath(for: row)) as! TableViewResizableCell
     }
     
     func selectRow(_ row: Int) {

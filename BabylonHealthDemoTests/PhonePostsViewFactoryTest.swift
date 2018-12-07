@@ -24,7 +24,7 @@ class PhonePostsViewFactoryTest: XCTestCase {
         postsView.loadViewIfNeeded()
         
         XCTAssertEqual(postsView.numberOfRows(), 1)
-        XCTAssertEqual(postsView.text(for: 0), "No Posts")
+        XCTAssertEqual(postsView.resizableText(for: 0), "No Posts")
     }
     
     func test_postsView_showsNoPostsText_whenLoaderCompletesWithError() {
@@ -34,7 +34,7 @@ class PhonePostsViewFactoryTest: XCTestCase {
         loader.complete!(.error(.composed))
         
         XCTAssertEqual(postsView.numberOfRows(), 1)
-        XCTAssertEqual(postsView.text(for: 0), "No Posts")
+        XCTAssertEqual(postsView.resizableText(for: 0), "No Posts")
     }
     
     func test_postsView_showsNoPostsText_whenLoaderCompletesWithZeroUsers() {
@@ -44,7 +44,7 @@ class PhonePostsViewFactoryTest: XCTestCase {
         loader.complete!(.success([]))
         
         XCTAssertEqual(postsView.numberOfRows(), 1)
-        XCTAssertEqual(postsView.text(for: 0), "No Posts")
+        XCTAssertEqual(postsView.resizableText(for: 0), "No Posts")
     }
     
     func test_postsView_showsCorrectCells_whenLoaderCompletesUsers() {
@@ -54,10 +54,10 @@ class PhonePostsViewFactoryTest: XCTestCase {
         loader.complete!(.success(testUsers()))
         
         XCTAssertEqual(postsView.numberOfRows(), 4)
-        XCTAssertEqual(postsView.text(for: 0), "title11")
-        XCTAssertEqual(postsView.text(for: 1), "title12")
-        XCTAssertEqual(postsView.text(for: 2), "title21")
-        XCTAssertEqual(postsView.text(for: 3), "title22")
+        XCTAssertEqual(postsView.resizableText(for: 0), "title11")
+        XCTAssertEqual(postsView.resizableText(for: 1), "title12")
+        XCTAssertEqual(postsView.resizableText(for: 2), "title21")
+        XCTAssertEqual(postsView.resizableText(for: 3), "title22")
         
         XCTAssertEqual(postsView.title, "Posts")
     }
@@ -104,12 +104,12 @@ class PhonePostsViewFactoryTest: XCTestCase {
         postDetailView.loadViewIfNeeded()
         
         XCTAssertEqual(postDetailView.numberOfRows(), 6)
-        XCTAssertEqual(postDetailView.text(for: 0), "Author")
-        XCTAssertEqual(postDetailView.text(for: 1), "")
-        XCTAssertEqual(postDetailView.text(for: 2), "Description")
-        XCTAssertEqual(postDetailView.text(for: 3), "body21")
-        XCTAssertEqual(postDetailView.text(for: 4), "Comments")
-        XCTAssertEqual(postDetailView.text(for: 5), "3")
+        XCTAssertEqual(postDetailView.titleText(for: 0), "Author")
+        XCTAssertEqual(postDetailView.resizableText(for: 1), "")
+        XCTAssertEqual(postDetailView.titleText(for: 2), "Description")
+        XCTAssertEqual(postDetailView.resizableText(for: 3), "body21")
+        XCTAssertEqual(postDetailView.titleText(for: 4), "Comments")
+        XCTAssertEqual(postDetailView.resizableText(for: 5), "3")
     }
     
     func test_postDetailViewWithUser() {
@@ -125,12 +125,12 @@ class PhonePostsViewFactoryTest: XCTestCase {
         postDetailView.loadViewIfNeeded()
         
         XCTAssertEqual(postDetailView.numberOfRows(), 6)
-        XCTAssertEqual(postDetailView.text(for: 0), "Author")
-        XCTAssertEqual(postDetailView.text(for: 1), "user2")
-        XCTAssertEqual(postDetailView.text(for: 2), "Description")
-        XCTAssertEqual(postDetailView.text(for: 3), "body21")
-        XCTAssertEqual(postDetailView.text(for: 4), "Comments")
-        XCTAssertEqual(postDetailView.text(for: 5), "3")
+        XCTAssertEqual(postDetailView.titleText(for: 0), "Author")
+        XCTAssertEqual(postDetailView.resizableText(for: 1), "user2")
+        XCTAssertEqual(postDetailView.titleText(for: 2), "Description")
+        XCTAssertEqual(postDetailView.resizableText(for: 3), "body21")
+        XCTAssertEqual(postDetailView.titleText(for: 4), "Comments")
+        XCTAssertEqual(postDetailView.resizableText(for: 5), "3")
 
         XCTAssertEqual(postDetailView.title, "title21")
     }
@@ -175,8 +175,12 @@ extension CustomTableViewController {
         return tableView.dataSource!.tableView(tableView, numberOfRowsInSection: 0)
     }
     
-    func cell(for row: Int) -> TableViewResizableCell {
+    func resizableCell(for row: Int) -> TableViewResizableCell {
         return tableView.dataSource!.tableView(tableView, cellForRowAt: indexPath(for: row)) as! TableViewResizableCell
+    }
+    
+    func titleCell(for row: Int) -> TableViewTitleCell {
+        return tableView.dataSource!.tableView(tableView, cellForRowAt: indexPath(for: row)) as! TableViewTitleCell
     }
     
     func selectRow(_ row: Int) {
@@ -187,7 +191,11 @@ extension CustomTableViewController {
         return IndexPath(row: row, section: 0)
     }
     
-    func text(for row: Int) -> String {
-        return cell(for: row).labelText
+    func resizableText(for row: Int) -> String {
+        return resizableCell(for: row).labelText
+    }
+    
+    func titleText(for row: Int) -> String {
+        return titleCell(for: row).labelText
     }
 }

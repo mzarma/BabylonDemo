@@ -10,20 +10,22 @@ import Foundation
 import CoreData
 
 final class CoreDataRepository: Repository {
-    private lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "BabylonHealthDemo")
-        container.loadPersistentStores(completionHandler: { storeDescription, error in
-            
-        })
-        return container
+    private let container: NSPersistentContainer
+    
+    private lazy var backgroundContext: NSManagedObjectContext = {
+        return self.container.newBackgroundContext()
     }()
     
+    init(container: NSPersistentContainer) {
+        self.container = container
+        self.container.viewContext.automaticallyMergesChangesFromParent = true
+    }
+    
     func allUsers(completion: @escaping (RepositoryResult) -> Void) {
-        let context = persistentContainer.viewContext
         let request: NSFetchRequest<CoreDataUser> = CoreDataUser.fetchRequest()
         
         do {
-            let users = try context.fetch(request)
+            let users = try backgroundContext.fetch(request)
             completion(.success(CoreDataRepository.localUsers(from: users)))
         } catch {
             print("Error fetching data from context \(error)")
@@ -32,9 +34,8 @@ final class CoreDataRepository: Repository {
     }
     
     func update(_ users: [LocalUser]) {
-        let context = persistentContainer.viewContext
-        clearUsers(context)
-        save(users, context: context)
+        clearUsers(backgroundContext)
+        save(users, context: backgroundContext)
     }
     
     private func clearUsers(_ context: NSManagedObjectContext) {

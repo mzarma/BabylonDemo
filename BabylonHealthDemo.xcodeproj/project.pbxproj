@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		05A1D44121B8104200CAA7F7 /* LocalDataLoaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1D44021B8104200CAA7F7 /* LocalDataLoaderTest.swift */; };
 		05A1D44321B9263800CAA7F7 /* ComposedDataLoaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1D44221B9263800CAA7F7 /* ComposedDataLoaderTest.swift */; };
-		05A1D44521B9776F00CAA7F7 /* DataLoaderTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1D44421B9776F00CAA7F7 /* DataLoaderTestHelpers.swift */; };
+		05A1D44521B9776F00CAA7F7 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1D44421B9776F00CAA7F7 /* Helpers.swift */; };
+		05A1D44D21B983E700CAA7F7 /* CoreDataRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1D44C21B983E700CAA7F7 /* CoreDataRepositoryTest.swift */; };
+		05A1D44F21B99F0C00CAA7F7 /* BabylonHealthDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B87021B42E5C00D7880D /* BabylonHealthDemo.xcdatamodeld */; };
 		05B1B82121B048C300D7880D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B82021B048C300D7880D /* AppDelegate.swift */; };
 		05B1B82B21B048C400D7880D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05B1B82A21B048C400D7880D /* Assets.xcassets */; };
 		05B1B82E21B048C400D7880D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B1B82C21B048C400D7880D /* LaunchScreen.storyboard */; };
@@ -52,7 +54,8 @@
 /* Begin PBXFileReference section */
 		05A1D44021B8104200CAA7F7 /* LocalDataLoaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataLoaderTest.swift; sourceTree = "<group>"; };
 		05A1D44221B9263800CAA7F7 /* ComposedDataLoaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposedDataLoaderTest.swift; sourceTree = "<group>"; };
-		05A1D44421B9776F00CAA7F7 /* DataLoaderTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoaderTestHelpers.swift; sourceTree = "<group>"; };
+		05A1D44421B9776F00CAA7F7 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		05A1D44C21B983E700CAA7F7 /* CoreDataRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepositoryTest.swift; sourceTree = "<group>"; };
 		05B1B81D21B048C300D7880D /* BabylonHealthDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabylonHealthDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05B1B82021B048C300D7880D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05B1B82A21B048C400D7880D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -163,7 +166,8 @@
 				05B1B87C21B6907700D7880D /* RemoteDataLoaderTest.swift */,
 				05A1D44021B8104200CAA7F7 /* LocalDataLoaderTest.swift */,
 				05A1D44221B9263800CAA7F7 /* ComposedDataLoaderTest.swift */,
-				05A1D44421B9776F00CAA7F7 /* DataLoaderTestHelpers.swift */,
+				05A1D44421B9776F00CAA7F7 /* Helpers.swift */,
+				05A1D44C21B983E700CAA7F7 /* CoreDataRepositoryTest.swift */,
 			);
 			path = BabylonHealthDemoTests;
 			sourceTree = "<group>";
@@ -299,7 +303,9 @@
 				05B1B87A21B5525B00D7880D /* PhonePostsViewFactoryTest.swift in Sources */,
 				05B1B87D21B6907700D7880D /* RemoteDataLoaderTest.swift in Sources */,
 				05B1B87421B547ED00D7880D /* URLRequestFactoryTest.swift in Sources */,
-				05A1D44521B9776F00CAA7F7 /* DataLoaderTestHelpers.swift in Sources */,
+				05A1D44521B9776F00CAA7F7 /* Helpers.swift in Sources */,
+				05A1D44F21B99F0C00CAA7F7 /* BabylonHealthDemo.xcdatamodeld in Sources */,
+				05A1D44D21B983E700CAA7F7 /* CoreDataRepositoryTest.swift in Sources */,
 				05B1B87821B54E4700D7880D /* CoordinatorTest.swift in Sources */,
 				05A1D44321B9263800CAA7F7 /* ComposedDataLoaderTest.swift in Sources */,
 				05A1D44121B8104200CAA7F7 /* LocalDataLoaderTest.swift in Sources */,

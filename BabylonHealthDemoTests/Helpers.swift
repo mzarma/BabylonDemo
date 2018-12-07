@@ -36,3 +36,20 @@ let testLocalUsers = [
     LocalUser(id: 2, name: "user name 2",
               username: "user username 2", posts: [])
 ]
+
+let testUpdatedLocalUsers = [
+    LocalUser(id: 1, name: "user name 1",
+              username: "user username 1",posts: [
+                LocalPost(id: 1, title: "post title 1",
+                          body: "post body 1", comments: [
+                            LocalComment(id: 1, name: "comment name 1",
+                                         body: "comment body 1"),
+                            LocalComment(id: 2, name: "comment name 2",
+                                         body: "comment body 2")])]),
+    LocalUser(id: 3, name: "user name 3",
+              username: "user username 3", posts: [
+                LocalPost(id: 3, title: "post title 3",
+                          body: "post body 3", comments: [])]),
+    LocalUser(id: 4, name: "user name 4",
+              username: "user username 4", posts: [])
+]

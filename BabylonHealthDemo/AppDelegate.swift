@@ -14,12 +14,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var coordinator: Coordinator?
+    
+    private lazy var container: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "BabylonHealthDemo")
+        container.loadPersistentStores(completionHandler: { storeDescription, error in
+            
+        })
+        return container
+    }()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         let navigationController = UINavigationController()
         let client = APIClient(URLSession.shared)
-        let repository = CoreDataRepository()
+        let repository = CoreDataRepository(container: container)
         let remote = RemoteDataLoader(client: client)
         let local = LocalDataLoader(repository: repository)
         let loader = ComposedDataLoader(remote: remote, local: local, saver: local)

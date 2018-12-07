@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.18" systemVersion="18B75" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="CoreDataComment" representedClassName=".CoreDataComment" syncable="YES" codeGenerationType="class">
+    <entity name="CoreDataComment" representedClassName="CoreDataComment" syncable="YES" codeGenerationType="class">
         <attribute name="body" attributeType="String" syncable="YES"/>
         <attribute name="id" attributeType="Integer 64" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="post" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataPost" inverseName="comments" inverseEntity="CoreDataPost" syncable="YES"/>
     </entity>
-    <entity name="CoreDataPost" representedClassName=".CoreDataPost" syncable="YES" codeGenerationType="class">
+    <entity name="CoreDataPost" representedClassName="CoreDataPost" syncable="YES" codeGenerationType="class">
         <attribute name="body" attributeType="String" syncable="YES"/>
         <attribute name="id" attributeType="Integer 64" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="title" attributeType="String" syncable="YES"/>
         <relationship name="comments" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CoreDataComment" inverseName="post" inverseEntity="CoreDataComment" syncable="YES"/>
         <relationship name="user" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDataUser" inverseName="posts" inverseEntity="CoreDataUser" syncable="YES"/>
     </entity>
-    <entity name="CoreDataUser" representedClassName=".CoreDataUser" syncable="YES" codeGenerationType="class">
+    <entity name="CoreDataUser" representedClassName="CoreDataUser" syncable="YES" codeGenerationType="class">
         <attribute name="id" attributeType="Integer 64" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="username" attributeType="String" syncable="YES"/>
         <relationship name="posts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CoreDataPost" inverseName="user" inverseEntity="CoreDataPost" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CoreDataUser" positionX="-106.85546875" positionY="-278.734375" width="128" height="103"/>
-        <element name="CoreDataPost" positionX="-105.46875" positionY="-121.484375" width="128" height="118"/>
-        <element name="CoreDataComment" positionX="-107.2421875" positionY="66.6875" width="128" height="103"/>
+        <element name="CoreDataComment" positionX="-107.2421875" positionY="66.6875" width="128" height="105"/>
+        <element name="CoreDataPost" positionX="-105.46875" positionY="-121.484375" width="128" height="120"/>
+        <element name="CoreDataUser" positionX="-106.85546875" positionY="-278.734375" width="128" height="105"/>
     </elements>
 </model>

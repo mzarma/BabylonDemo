@@ -24,21 +24,31 @@ final class PostDetailDataSourceDelegate: NSObject, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
-        case TableStructure.authorTitle.rawValue: return defaultCell(text: PostDetailViewModel.authorTitle)
-        case TableStructure.author.rawValue: return defaultCell(text: postDetail.author)
-        case TableStructure.descriptionTitle.rawValue: return defaultCell(text: PostDetailViewModel.descriptionTitle)
-        case TableStructure.description.rawValue: return defaultCell(text: postDetail.description)
-        case TableStructure.numberOfCommentsTitle.rawValue: return defaultCell(text: PostDetailViewModel.numberOfCommentsTitle)
-        case TableStructure.numberOfComments.rawValue: return defaultCell(text: postDetail.numberOfComments)
+        case TableStructure.authorTitle.rawValue: return resizableCell(text: PostDetailViewModel.authorTitle)
+        case TableStructure.author.rawValue: return resizableCell(text: postDetail.author)
+        case TableStructure.descriptionTitle.rawValue: return resizableCell(text: PostDetailViewModel.descriptionTitle)
+        case TableStructure.description.rawValue: return resizableCell(text: postDetail.description)
+        case TableStructure.numberOfCommentsTitle.rawValue: return resizableCell(text: PostDetailViewModel.numberOfCommentsTitle)
+        case TableStructure.numberOfComments.rawValue: return resizableCell(text: postDetail.numberOfComments)
         default: return UITableViewCell()
         }
     }
     
     // MARK: - UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let width = tableView.bounds.width
 
-    private func defaultCell(text: String) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = text
+        switch indexPath.row {
+        case TableStructure.description.rawValue: return ResizableTableViewCell.height(constrainedTo: width, for: postDetail.description)
+        default: return 44
+        }
+    }
+
+    private func resizableCell(text: String) -> UITableViewCell {
+        let cell = ResizableTableViewCell()
+        cell.labelText = text
+        cell.selectionStyle = .none
         return cell
     }
 }

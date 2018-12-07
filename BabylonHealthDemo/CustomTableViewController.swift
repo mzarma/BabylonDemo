@@ -26,11 +26,19 @@ final class CustomTableViewController: UIViewController {
         setupTableView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let indexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: indexPath, animated: false)
+        }
+    }
+    
     private func setupTableView() {
         view.addSubview(tableView)
         
         tableView.dataSource = dataSource
         tableView.delegate = delegate
+        
+        tableView.tableFooterView = UIView()
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         

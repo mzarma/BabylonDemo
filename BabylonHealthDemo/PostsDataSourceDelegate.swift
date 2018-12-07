@@ -30,7 +30,7 @@ final class PostsDataSourceDelegate: NSObject, UITableViewDataSource, UITableVie
         return posts.count > 0 ? configuredPostsCell(at: indexPath) : configuredNoPostsCell()
     }
     
-    // MARK: - UITableViewDataSource
+    // MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if posts.count > 0 {
@@ -38,15 +38,21 @@ final class PostsDataSourceDelegate: NSObject, UITableViewDataSource, UITableVie
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let width = tableView.bounds.width
+        let height = ResizableTableViewCell.height(constrainedTo: width, for: posts[indexPath.row].title)
+        return height > 44 ? height : 44
+    }
+    
     private func configuredNoPostsCell() -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = noPostsText
+        let cell = ResizableTableViewCell()
+        cell.labelText = noPostsText
         return cell
     }
     
     private func configuredPostsCell(at indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = posts[indexPath.row].title
+        let cell = ResizableTableViewCell()
+        cell.labelText = posts[indexPath.row].title
         return cell
     }
 }

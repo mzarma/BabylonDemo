@@ -1,5 +1,5 @@
 //
-//  ComposedDataLoaderTest.swift
+//  RemoteWithLocalFallbackDataLoaderTest.swift
 //  BabylonHealthDemoTests
 //
 //  Created by Michail Zarmakoupis on 06/12/2018.
@@ -9,8 +9,8 @@
 import XCTest
 @testable import BabylonHealthDemo
 
-class ComposedDataLoaderTest: XCTestCase {
-    private weak var weakSUT: ComposedDataLoader?
+class RemoteWithLocalFallbackDataLoaderTest: XCTestCase {
+    private weak var weakSUT: RemoteWithLocalFallbackDataLoader?
     
     override func tearDown() {
         XCTAssertNil(weakSUT)
@@ -82,10 +82,10 @@ class ComposedDataLoaderTest: XCTestCase {
     private let repository = RepositoryStub()
     private let saver = DataSaverSpy()
     
-    private func makeSUT() -> ComposedDataLoader {
+    private func makeSUT() -> RemoteWithLocalFallbackDataLoader {
         let remote = RemoteDataLoader(client: client)
-        let local = LocalDataLoader(repository: repository)
-        let sut = ComposedDataLoader(remote: remote, local: local, saver: saver)
+        let local = LocalDataLoaderAndSaver(repository: repository)
+        let sut = RemoteWithLocalFallbackDataLoader(remote: remote, local: local, saver: saver)
         weakSUT = sut
         return sut
     }

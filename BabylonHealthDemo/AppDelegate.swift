@@ -29,8 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let client = APIClient(URLSession.shared)
         let repository = CoreDataRepository(container: container)
         let remote = RemoteDataLoader(client: client)
-        let local = LocalDataLoader(repository: repository)
-        let loader = ComposedDataLoader(remote: remote, local: local, saver: local)
+        let local = LocalDataLoaderAndSaver(repository: repository)
+        let loader = RemoteWithLocalFallbackDataLoader(remote: remote, local: local, saver: local)
         let postsViewFactory = PhonePostsViewFactory(loader: loader)
         coordinator = Coordinator(navigation: navigationController,
                     postsViewFactory: postsViewFactory,

@@ -1,5 +1,5 @@
 //
-//  LocalDataLoaderTest.swift
+//  LocalDataLoaderAndSaverTest.swift
 //  BabylonHealthDemoTests
 //
 //  Created by Michail Zarmakoupis on 05/12/2018.
@@ -9,8 +9,8 @@
 import XCTest
 @testable import BabylonHealthDemo
 
-class LocalDataLoaderTest: XCTestCase {
-    private weak var weakSUT: LocalDataLoader?
+class LocalDataLoaderAndSaverTest: XCTestCase {
+    private weak var weakSUT: LocalDataLoaderAndSaver?
     
     override func tearDown() {
         XCTAssertNil(weakSUT)
@@ -66,8 +66,8 @@ class LocalDataLoaderTest: XCTestCase {
     
     private let repository = RepositoryStub()
     
-    private func makeSUT() -> LocalDataLoader {
-        let sut = LocalDataLoader(repository: repository)
+    private func makeSUT() -> LocalDataLoaderAndSaver {
+        let sut = LocalDataLoaderAndSaver(repository: repository)
         weakSUT = sut
         return sut
     }

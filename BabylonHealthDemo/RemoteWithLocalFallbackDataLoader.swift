@@ -1,5 +1,5 @@
 //
-//  ComposedDataLoader.swift
+//  RemoteWithLocalFallbackDataLoader.swift
 //  BabylonHealthDemo
 //
 //  Created by Michail Zarmakoupis on 02/12/2018.
@@ -12,12 +12,12 @@ protocol DataSaver {
     func update(_ users: [User])
 }
 
-final class ComposedDataLoader: DataLoader {
+final class RemoteWithLocalFallbackDataLoader: DataLoader {
     private let remote: RemoteDataLoader
-    private let local: LocalDataLoader
+    private let local: LocalDataLoaderAndSaver
     private let saver: DataSaver
     
-    init(remote: RemoteDataLoader, local: LocalDataLoader, saver: DataSaver) {
+    init(remote: RemoteDataLoader, local: LocalDataLoaderAndSaver, saver: DataSaver) {
         self.remote = remote
         self.local = local
         self.saver = saver

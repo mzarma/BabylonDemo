@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05A1D44121B8104200CAA7F7 /* LocalDataLoaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1D44021B8104200CAA7F7 /* LocalDataLoaderTest.swift */; };
-		05A1D44321B9263800CAA7F7 /* ComposedDataLoaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1D44221B9263800CAA7F7 /* ComposedDataLoaderTest.swift */; };
+		05A1D44121B8104200CAA7F7 /* LocalDataLoaderAndSaverTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1D44021B8104200CAA7F7 /* LocalDataLoaderAndSaverTest.swift */; };
+		05A1D44321B9263800CAA7F7 /* RemoteWithLocalFallbackDataLoaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1D44221B9263800CAA7F7 /* RemoteWithLocalFallbackDataLoaderTest.swift */; };
 		05A1D44521B9776F00CAA7F7 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1D44421B9776F00CAA7F7 /* Helpers.swift */; };
 		05A1D44D21B983E700CAA7F7 /* CoreDataRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1D44C21B983E700CAA7F7 /* CoreDataRepositoryTest.swift */; };
 		05A1D44F21B99F0C00CAA7F7 /* BabylonHealthDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B87021B42E5C00D7880D /* BabylonHealthDemo.xcdatamodeld */; };
@@ -32,9 +32,9 @@
 		05B1B85E21B1481F00D7880D /* DataLoaderModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B85D21B1481F00D7880D /* DataLoaderModels.swift */; };
 		05B1B86021B1761400D7880D /* RemoteModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B85F21B1761400D7880D /* RemoteModels.swift */; };
 		05B1B86421B2EBBD00D7880D /* RemoteDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86321B2EBBC00D7880D /* RemoteDataLoader.swift */; };
-		05B1B86621B3F21300D7880D /* LocalDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86521B3F21300D7880D /* LocalDataLoader.swift */; };
+		05B1B86621B3F21300D7880D /* LocalDataLoaderAndSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86521B3F21300D7880D /* LocalDataLoaderAndSaver.swift */; };
 		05B1B86821B3F99500D7880D /* LocalModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86721B3F99500D7880D /* LocalModels.swift */; };
-		05B1B86A21B3FDC100D7880D /* ComposedDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86921B3FDC100D7880D /* ComposedDataLoader.swift */; };
+		05B1B86A21B3FDC100D7880D /* RemoteWithLocalFallbackDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86921B3FDC100D7880D /* RemoteWithLocalFallbackDataLoader.swift */; };
 		05B1B86C21B402EC00D7880D /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B86B21B402EC00D7880D /* CoreDataRepository.swift */; };
 		05B1B87221B42E5C00D7880D /* BabylonHealthDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B87021B42E5C00D7880D /* BabylonHealthDemo.xcdatamodeld */; };
 		05B1B87421B547ED00D7880D /* URLRequestFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B87321B547EC00D7880D /* URLRequestFactoryTest.swift */; };
@@ -55,8 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05A1D44021B8104200CAA7F7 /* LocalDataLoaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataLoaderTest.swift; sourceTree = "<group>"; };
-		05A1D44221B9263800CAA7F7 /* ComposedDataLoaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposedDataLoaderTest.swift; sourceTree = "<group>"; };
+		05A1D44021B8104200CAA7F7 /* LocalDataLoaderAndSaverTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataLoaderAndSaverTest.swift; sourceTree = "<group>"; };
+		05A1D44221B9263800CAA7F7 /* RemoteWithLocalFallbackDataLoaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteWithLocalFallbackDataLoaderTest.swift; sourceTree = "<group>"; };
 		05A1D44421B9776F00CAA7F7 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		05A1D44C21B983E700CAA7F7 /* CoreDataRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepositoryTest.swift; sourceTree = "<group>"; };
 		05A1D45021BA6A8E00CAA7F7 /* TableViewResizableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewResizableCell.swift; sourceTree = "<group>"; };
@@ -83,9 +83,9 @@
 		05B1B85D21B1481F00D7880D /* DataLoaderModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoaderModels.swift; sourceTree = "<group>"; };
 		05B1B85F21B1761400D7880D /* RemoteModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteModels.swift; sourceTree = "<group>"; };
 		05B1B86321B2EBBC00D7880D /* RemoteDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDataLoader.swift; sourceTree = "<group>"; };
-		05B1B86521B3F21300D7880D /* LocalDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataLoader.swift; sourceTree = "<group>"; };
+		05B1B86521B3F21300D7880D /* LocalDataLoaderAndSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataLoaderAndSaver.swift; sourceTree = "<group>"; };
 		05B1B86721B3F99500D7880D /* LocalModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalModels.swift; sourceTree = "<group>"; };
-		05B1B86921B3FDC100D7880D /* ComposedDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposedDataLoader.swift; sourceTree = "<group>"; };
+		05B1B86921B3FDC100D7880D /* RemoteWithLocalFallbackDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteWithLocalFallbackDataLoader.swift; sourceTree = "<group>"; };
 		05B1B86B21B402EC00D7880D /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
 		05B1B87121B42E5C00D7880D /* BabylonHealthDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BabylonHealthDemo.xcdatamodel; sourceTree = "<group>"; };
 		05B1B87321B547EC00D7880D /* URLRequestFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestFactoryTest.swift; sourceTree = "<group>"; };
@@ -148,9 +148,9 @@
 				05B1B85921B147C500D7880D /* PostDetailViewModel.swift */,
 				05B1B85D21B1481F00D7880D /* DataLoaderModels.swift */,
 				05B1B86321B2EBBC00D7880D /* RemoteDataLoader.swift */,
-				05B1B86521B3F21300D7880D /* LocalDataLoader.swift */,
+				05B1B86521B3F21300D7880D /* LocalDataLoaderAndSaver.swift */,
 				05B1B87021B42E5C00D7880D /* BabylonHealthDemo.xcdatamodeld */,
-				05B1B86921B3FDC100D7880D /* ComposedDataLoader.swift */,
+				05B1B86921B3FDC100D7880D /* RemoteWithLocalFallbackDataLoader.swift */,
 				05B1B86B21B402EC00D7880D /* CoreDataRepository.swift */,
 				05B1B85F21B1761400D7880D /* RemoteModels.swift */,
 				05B1B86721B3F99500D7880D /* LocalModels.swift */,
@@ -173,8 +173,8 @@
 				05B1B87921B5525B00D7880D /* PhonePostsViewFactoryTest.swift */,
 				05B1B87721B54E4700D7880D /* CoordinatorTest.swift */,
 				05B1B87C21B6907700D7880D /* RemoteDataLoaderTest.swift */,
-				05A1D44021B8104200CAA7F7 /* LocalDataLoaderTest.swift */,
-				05A1D44221B9263800CAA7F7 /* ComposedDataLoaderTest.swift */,
+				05A1D44021B8104200CAA7F7 /* LocalDataLoaderAndSaverTest.swift */,
+				05A1D44221B9263800CAA7F7 /* RemoteWithLocalFallbackDataLoaderTest.swift */,
 				05A1D44421B9776F00CAA7F7 /* Helpers.swift */,
 				05A1D44C21B983E700CAA7F7 /* CoreDataRepositoryTest.swift */,
 			);
@@ -282,7 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05B1B86A21B3FDC100D7880D /* ComposedDataLoader.swift in Sources */,
+				05B1B86A21B3FDC100D7880D /* RemoteWithLocalFallbackDataLoader.swift in Sources */,
 				05B1B84E21B135D800D7880D /* Coordinator.swift in Sources */,
 				05B1B86021B1761400D7880D /* RemoteModels.swift in Sources */,
 				05B1B85C21B147F800D7880D /* Models.swift in Sources */,
@@ -300,7 +300,7 @@
 				05B1B85821B1473F00D7880D /* PostViewModel.swift in Sources */,
 				05B1B85E21B1481F00D7880D /* DataLoaderModels.swift in Sources */,
 				05B1B86C21B402EC00D7880D /* CoreDataRepository.swift in Sources */,
-				05B1B86621B3F21300D7880D /* LocalDataLoader.swift in Sources */,
+				05B1B86621B3F21300D7880D /* LocalDataLoaderAndSaver.swift in Sources */,
 				05B1B85621B1470E00D7880D /* APIClientModels.swift in Sources */,
 				05B1B86821B3F99500D7880D /* LocalModels.swift in Sources */,
 				05B1B85021B1382B00D7880D /* URLRequestFactory.swift in Sources */,
@@ -319,8 +319,8 @@
 				05A1D44F21B99F0C00CAA7F7 /* BabylonHealthDemo.xcdatamodeld in Sources */,
 				05A1D44D21B983E700CAA7F7 /* CoreDataRepositoryTest.swift in Sources */,
 				05B1B87821B54E4700D7880D /* CoordinatorTest.swift in Sources */,
-				05A1D44321B9263800CAA7F7 /* ComposedDataLoaderTest.swift in Sources */,
-				05A1D44121B8104200CAA7F7 /* LocalDataLoaderTest.swift in Sources */,
+				05A1D44321B9263800CAA7F7 /* RemoteWithLocalFallbackDataLoaderTest.swift in Sources */,
+				05A1D44121B8104200CAA7F7 /* LocalDataLoaderAndSaverTest.swift in Sources */,
 				05B1B87621B54A0F00D7880D /* APIClientTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

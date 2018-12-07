@@ -1,5 +1,5 @@
 //
-//  LocalDataLoader.swift
+//  LocalDataLoaderAndSaver.swift
 //  BabylonHealthDemo
 //
 //  Created by Michail Zarmakoupis on 02/12/2018.
@@ -18,7 +18,7 @@ protocol Repository {
     func update(_ users: [LocalUser])
 }
 
-final class LocalDataLoader: DataLoader, DataSaver {
+final class LocalDataLoaderAndSaver: DataLoader, DataSaver {
     private let repository: Repository
     
     init(repository: Repository) {
@@ -26,26 +26,26 @@ final class LocalDataLoader: DataLoader, DataSaver {
     }
     
     func update(_ users: [User]) {
-        repository.update(LocalDataLoader.map(users))
+        repository.update(LocalDataLoaderAndSaver.map(users))
     }
     
     func loadData(completion: @escaping (DataLoaderResult) -> Void) {
         repository.allUsers { result in
             switch result {
-            case .success(let users): completion(.success(LocalDataLoader.map(users)))
+            case .success(let users): completion(.success(LocalDataLoaderAndSaver.map(users)))
             case .error: completion(.error(.local))
             }
         }
     }
 }
 
-private extension LocalDataLoader {
+private extension LocalDataLoaderAndSaver {
     static func map(_ users: [LocalUser]) -> [User] {
         return users.map {
             return User(id: $0.id,
                         name: $0.name,
                         username: $0.username,
-                        posts: LocalDataLoader.map($0.posts))
+                        posts: LocalDataLoaderAndSaver.map($0.posts))
         }
     }
     
@@ -54,7 +54,7 @@ private extension LocalDataLoader {
             return Post(id: $0.id,
                         title: $0.title,
                         body: $0.body,
-                        comments: LocalDataLoader.map($0.comments))
+                        comments: LocalDataLoaderAndSaver.map($0.comments))
         }
     }
     
@@ -67,13 +67,13 @@ private extension LocalDataLoader {
     }
 }
 
-private extension LocalDataLoader {
+private extension LocalDataLoaderAndSaver {
     static func map(_ users: [User]) -> [LocalUser] {
         return users.map {
             return LocalUser(id: $0.id,
                         name: $0.name,
                         username: $0.username,
-                        posts: LocalDataLoader.map($0.posts))
+                        posts: LocalDataLoaderAndSaver.map($0.posts))
         }
     }
     
@@ -82,7 +82,7 @@ private extension LocalDataLoader {
             return LocalPost(id: $0.id,
                         title: $0.title,
                         body: $0.body,
-                        comments: LocalDataLoader.map($0.comments))
+                        comments: LocalDataLoaderAndSaver.map($0.comments))
         }
     }
     

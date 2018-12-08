@@ -151,12 +151,12 @@
 			path = PostDetail;
 			sourceTree = "<group>";
 		};
-		05A1D45A21BA9F0E00CAA7F7 /* Coordinator */ = {
+		05A1D45A21BA9F0E00CAA7F7 /* Coordination */ = {
 			isa = PBXGroup;
 			children = (
 				05B1B84D21B135D800D7880D /* Coordinator.swift */,
 			);
-			path = Coordinator;
+			path = Coordination;
 			sourceTree = "<group>";
 		};
 		05A1D45B21BA9F3400CAA7F7 /* Presentation */ = {
@@ -206,12 +206,12 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		05A1D46121BAA0D500CAA7F7 /* Coordinator */ = {
+		05A1D46121BAA0D500CAA7F7 /* Coordination */ = {
 			isa = PBXGroup;
 			children = (
 				05B1B87721B54E4700D7880D /* CoordinatorTest.swift */,
 			);
-			path = Coordinator;
+			path = Coordination;
 			sourceTree = "<group>";
 		};
 		05A1D46221BAA0F300CAA7F7 /* Persistence */ = {
@@ -292,7 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				05A1D45C21BAA00000CAA7F7 /* Main */,
-				05A1D45A21BA9F0E00CAA7F7 /* Coordinator */,
+				05A1D45A21BA9F0E00CAA7F7 /* Coordination */,
 				05A1D45621BA9E8700CAA7F7 /* UI */,
 				05A1D45B21BA9F3400CAA7F7 /* Presentation */,
 				05A1D45D21BAA00D00CAA7F7 /* Models */,
@@ -310,7 +310,7 @@
 				05B1B83A21B048C400D7880D /* Info.plist */,
 				05A1D46721BAA19600CAA7F7 /* Shared */,
 				05A1D46021BAA0CD00CAA7F7 /* Main */,
-				05A1D46121BAA0D500CAA7F7 /* Coordinator */,
+				05A1D46121BAA0D500CAA7F7 /* Coordination */,
 				05A1D46421BAA14F00CAA7F7 /* Networking */,
 				05A1D46221BAA0F300CAA7F7 /* Persistence */,
 			);
